@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="col-md-6 center-form" id="form1">
-                            <form class="login">
+                            <form  action="" class="login">
                                 <div class="input-group mb-3" style="text-align: center;">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
