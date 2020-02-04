@@ -19,7 +19,5 @@ class User extends Model{
     public function update($email,$pass){
         $sql = "update users set email = :email, `password` = :pass where id = 1";
         $data = $this->db->queryAll($sql,[':email' => $email,':pass' => $pass]);
-    }
-
-    public function 
+    } 
 }

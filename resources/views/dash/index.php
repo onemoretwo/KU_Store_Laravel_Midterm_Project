@@ -15,10 +15,10 @@
     <br>
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" href="<?= $this->asset('/css/dash.php') ?>">DashBoard</a>
+            <a class="nav-link active" href="/dash/index">DashBoard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= $this->asset('/css/index.php') ?>">Products</a>
+            <a class="nav-link" href="/admin/index">Products</a>
         </li>
 
     </ul>
@@ -68,7 +68,6 @@
             </div>
 
             <div class="container" style="margin-top: 20px;">
-                <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#home">Daily</a>
@@ -80,8 +79,6 @@
                         <a class="nav-link" data-toggle="tab" href="#menu2">Monthly</a>
                     </li>
                 </ul>
-
-                <!-- Tab panes -->
                 <div class="tab-content">
                     <div id="home" class="container tab-pane active"><br>
                         <h3>HOME</h3>
