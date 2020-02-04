@@ -196,8 +196,8 @@
 
 
         <div class="row" id="">
-
-            <div class="col-md-4">
+                
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="card" style="width: 18rem; height: 40rem;">
                     <img src="<?= $this->asset('/images/leisure.jpeg') ?>" class="card-img-top" alt="..." height="300px"
                         width="288px">
