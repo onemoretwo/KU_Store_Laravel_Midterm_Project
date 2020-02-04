@@ -1,64 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $this->layout('layouts/app'); ?>
+<link rel="stylesheet" href="<?= $this->asset('/css/agency.min.css') ?>">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/bootstrap-4.4.1/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/shirt.css">
-    <link rel="stylesheet" href="/css/fontawesome-free-5.12.0-web/css/all.min.css">
 
-    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
 </head>
 
-<body>
-
-<nav class="navbar navbar-expand-sm bg-pink navbar-dark">
-      <div class="container-fluid">
-        <!-- Brand -->
-        <a class="navbar-brand" href="/home"><span class="fas fa-home"></span><span class="link">Home</span></a>
-      
-        <div class="navbar-collapse collapse">
-        <!-- Links -->
-          <ul class="nav navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/reward"><span class="fas fa-gift"></span><span class="link">Point & Reward</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cart"><span class="fas fa-shopping-cart"></span><span class="link">My cart</span></a>
-            </li>
-          </ul>
-        </div>
-  
-        <span class="user">
-          <img src="/images/user_img/profiletest.jpg" alt=""> ID: admin
-        </span>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-chevron-circle-down"></i>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/edit">Edit Profile</a>
-            <hr>
-            <a class="dropdown-item" href="/login">Logout</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <header>
+<body id="page-top">
 
 
-    </header>
-<!-- 
-    <div class="logo" id="logo">
-        <img src="source/logo2.png" alt="" id="logo" width="225px" height="225px" >
-    </div> -->
-
-
-    <div class="container">
-        <div class="container carouse">
+<!-- <div class=" carouse">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" style="height: 450px;">
                     <div class="carousel-item active">
@@ -80,11 +51,22 @@
                     <span class="sr-only">Next</span>
                 </a>
 
-            </div>
+            </div> -->
+
+    
+
+
+
+    <!-- Portfolio Grid -->
+    <section class="bg-light page-section" id="portfolio">
+        <div class="container">
+
+    <div class="container">
+        
             <div class="container">
                 <div>
                     <div class="logo" id="logo">
-                        <img src="/images/logo2.png" alt="" id="logo" width="225px" height="225px" >
+                        <img src="<?= $this->asset('/images/logo2.png') ?>" alt="" id="logo" width="225px" height="225px">
                     </div>
                     <div class="row" id="selectItem">
                         <div class="col-lg-12">
@@ -104,32 +86,26 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single_service">
                             <div class="service_icon_wrap text-center">
-                                <div class="service_icon " >
-                                    <a href="shirt.html"><ion-icon name="shirt" ></ion-icon></a>
-                                </div>
+                                <form action="../home" >
+                                    <input type="image" src="<?= $this->asset('/images/shirt.png') ?>" href="/resources/views/home" style="width: 90px;height: 90px;padding-top: 20px;"onsubmit="submit();" />
+                                  </form>
                                 <div class="info text-center">
                                     <span>
                                         <h3>Shirts</h3>
                                     </span>
-    
+
                                 </div>
-                                
+
                             </div>
-                            <!-- <div class="info text-center">
-                                <span>
-                                    <h3>Shirts</h3>
-                                </span>
-
-                            </div> -->
-
+                            
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="single_service ">
                             <div class="service_icon_wrap text-center">
-                                <div class="service_icon ">
-                                    <a href="pant.html"><ion-icon name="shirt" ></ion-icon></a>
-                                </div>
+                                <form action="../pant">
+                                    <input type="image" src="<?= $this->asset('/images/jeans.png') ?>" href="/resources/views/pant" style="width: 90px;height: 90px;padding-top: 20px;"onsubmit="submit();" />
+                                  </form>
                             </div>
                             <div class="info text-center">
                                 <span>
@@ -145,9 +121,9 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single_service ">
                             <div class="service_icon_wrap text-center">
-                                <div class="service_icon ">
-                                    <a href="accessory.html"><ion-icon name="shirt" ></ion-icon></a>
-                                </div>
+                                <form action="../accessories">
+                                    <input type="image" src="<?= $this->asset('/images/footprint.png') ?>" href="/resources/views/accessories" style="width: 90px;height: 90px;padding-top: 20px;"onsubmit="submit();" />
+                                  </form>
                             </div>
                             <div class="info text-center">
                                 <span>
@@ -158,225 +134,357 @@
 
                         </div>
                     </div>
+                    
+
                 </div>
             </div>
         </div>
-
-        <!-- <div class="type">
-            <h2>Shirts</h2>
-        </div>
-        <hr class="new5">
-        <div class="containerShirt">
             <div class="row">
-                <div class="col">
-                    <img src="source/street1.jpg" alt="" height="300px" width="400px">
-                </div>
-                <div class="col" id="descript">
-                    <h2>The Street x Shopee</h2>
-                    <div>
-                        <h4>1,200 Baht.</h4>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-info ">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
-                        </a>
-                    </p>
-
-
+            
+                <div class="col-lg-12 text-center" id="product">
+                    <hr class="new5">
+                    <h2 class="section-heading text-uppercase" id="type" >Shirts</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
-        </div> -->
-        <div>
-            <h2 class="type">Pants</h2>
-        </div>
-        <div>
-            <hr class="new5">
-        </div>
-        <div class="row" id="">
-
-
-        <div class="row" id="">
-                
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="card" style="width: 18rem; height: 40rem;">
-                    <img src="<?= $this->asset('/images/leisure.jpeg') ?>" class="card-img-top" alt="..." height="300px"
-                        width="288px">
-                    <div class="card-body">
-                        <div class="col" id="descript">
-                            <h4 align="center">Champion</h4>
-                            <h2>Leisure hoodie
-                            </h2>
-                            <div>
-                                <div>Material:Cotton 50%, Polyester 50%</div>
-                                <div>Color: White</div>
-                                <div>Imported</div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
                             </div>
-                            <div>
-                                <h4>2,250 baht
-                                </h4>
-                            </div>
-
                         </div>
-                        
-                        </p>
-
+                        <img class="img-fluid" src="<?= $this->asset('/images/leisure.jpeg') ?>" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Champion Leisure hoodie</h4>
+                        <p class="text-muted">2,250 baht</p>
+                        <div>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="	fa fa-cart-plus"></i>
+                                    Add to Cart</button>
+                    </div>
                     </div>
                     
-                    <a href="https://w3docs.com"><button type="button"
-                                class="btn btn-secondary btn-block"><i style="font-size:25px"
-                                    class="fa fa-shopping-cart"></i> Add To Cart</button>
-                        </a>
-                    
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;height: 40rem;">
-                    <img src="<?= $this->asset('/images/shirt bape.jpeg') ?>" class="card-img-top" alt="..." height="300px" width="288px">
-                    <div class="card-body">
-                        <div class="col" id="descript" align="left">
-                            <h4 align="center">Bape</h4>
-                            <h2>Black & Purple bape shirt
-                            </h2>
-                            <div>Material: Cotton 100%</div>
-                            <div>Color: Black & Purple</div>
-                            <div>Imported</div>
-                            <div>
-                                <h4>2,300 baht
-                                </h4>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
                             </div>
-
                         </div>
-                        
-
-                        </p>
+                        <img class="img-fluid" src="<?= $this->asset('/images/shirt bape.jpeg') ?>" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Black & Purple bape shirt</h4>
+                        <p class="text-muted">2,300 baht</p>
+                        <div>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="	fa fa-cart-plus"></i>
+                                    Add to Cart</button>
                     </div>
-                    <div class="card-footer text-muted">
-                    <a href="https://w3docs.com"><button  type="button"
-                                class="btn btn-secondary btn-block"><i style="font-size:25px"
-                                    class="fa fa-shopping-cart"></i> Add To Cart</button>
-                        </a>
-
-   
-  </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;height: 40rem;">
-                    <img src="<?= $this->asset('/images/shirt classic white tommy.jpeg') ?>" class="card-img-top" alt="..." height="300px"
-                        width="288px">
-                    <div class="card-body">
-                        <div class="col" id="descript">
-                            <h4 align="center">Tommy Hilfiger</h4>
-                            <h2>
-                                T-shirt Boys Classic white
-                            </h2>
-                            <div>Material: Cotton 100%</div>
-                            <div>Color: Classic White</div>
-                            <div>Imported</div>
-                            <div>
-                                <h4>1,160 baht
-                                </h4>
-                            </div>
-
-
-                        </div>
-                        <a href="https://w3docs.com"><button type="button"
-                                class="btn btn-secondary btn-block"><i style="font-size:25px"
-                                    class="fa fa-shopping-cart"></i> Add To Cart</button>
-                        </a>
-                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;height: 40rem;">
-                    <img src="<?= $this->asset('/images/shirt yeezy for president.jpeg') ?>" class="card-img-top" alt="..." height="300px"
-                        width="288px">
-                    <div class="card-body">
-                        <div class="col" id="descript">
-                            <h4 align="center">Yeezy</h4>
-                            <h2>Yeezy For President
-                            </h2>
-                            <div>
-                                <div>Material:Cotton 100%</div>
-                                <div>Color: White</div>
-                                <div>Imported</div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
                             </div>
-                            <div>
-                                <h4>850 baht
-                                </h4>
-                            </div>
-
-
                         </div>
-                        <a href="https://w3docs.com"><button href="" type="button"
-                                class="btn btn-secondary btn-block"><i style="font-size:25px"
-                                    class="fa fa-shopping-cart"></i> Add To Cart</button>
-                        </a>
+                        <img class="img-fluid" src="<?= $this->asset('/images/shirt classic white tommy.jpeg') ?>" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Tommy Hilfiger T-shirt Boys Classic white</h4>
+                        <p class="text-muted">1,160 baht</p>
+                        <div>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="	fa fa-cart-plus"></i>
+                                    Add to Cart</button>
+                    </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;height: 40rem;">
-                    <img src="<?= $this->asset('/images/MSGM.jpeg') ?>" class="card-img-top" alt="..." height="300px" width="288px">
-                    <div class="card-body">
-                        <div class="col" id="descript">
-                            <h4 align="center">MSGM</h4>
-                            <h2>
-                                Boys Red 'Logo' T-Shirt
-                            </h2>
-                            <div>Material: Cotton 100%</div>
-                            <div>Color: Red</div>
-                            <div>USA</div>
-                            <div>
-                                <h4>1,160 baht
-                                </h4>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
                             </div>
-
-
-
                         </div>
-                        <a href="https://w3docs.com"><button href="" type="button"
-                                class="btn btn-secondary btn-block"><i style="font-size:25px"
-                                    class="fa fa-shopping-cart"></i> Add To Cart</button>
-                        </a>
-                        </p>
+                        <img class="img-fluid" src="<?= $this->asset('/images/shirt yeezy for president.jpeg') ?>" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Yeezy For President</h4>
+                        <p class="text-muted">850 baht</p>
+                        <div>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="	fa fa-cart-plus"></i>
+                                    Add to Cart</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="<?= $this->asset('/images/MSGM.jpeg') ?>" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>MGSM Boys Red 'Logo' T-Shirt</h4>
+                        <p class="text-muted">1,160 baht</p>
+                        <div>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="	fa fa-cart-plus"></i>
+                                    Add to Cart</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="<?= $this->asset('/images/shirt supreme.jpeg') ?>" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Supreme 20th Anniversary Box Logo</h4>
+                        <p class="text-muted">21,000 baht</p>
+                        <div>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="	fa fa-cart-plus"></i>
+                                    Add to Cart</button>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;height: 43rem;">
-                    <img src="<?= $this->asset('/images/shirt supreme.jpeg') ?>" class="card-img-top" alt="..." height="300px" width="288px">
-                    <div class="card-body">
-                        <div class="col" id="descript">
-                            <h4 align="center">Supreme</h4>
-                            <h2 >
-                                Supreme 20th Anniversary Box Logo
-                            </h2>
-                            <div>Material: Cotton 100%</div>
-                            <div>Color: Black</div>
-                            <div>Imported</div>
-                            <div>
-                                <h4>21,000 baht
-                                </h4>
-                            </div>
+        </div>
+    </section>
 
-                        </div>
-                        <a href="https://w3docs.com"><button href="" type="button"
-                                class="btn btn-secondary btn-block"><i style="font-size:25px"
-                                    class="fa fa-shopping-cart"></i> Add To Cart</button>
-                        </a>
-                        </p>
+
+
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
                     </div>
                 </div>
-            </div>
-
-        <div class="works_area">
                 <div class="container">
                     <div class="row">
+                        <div class="col-lg-6 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">Champion Leisure hoodie</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                <!-- <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                    nostrum, reiciendis facere nemo!</p> -->
+                                <ul class="list-inline">
+                                <li>Material : Cotton 50%, Polyester 50%</li>
+                                <li>Color : White</li>
+                                <li>Imported</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">Black & Purple bape shirt</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+                                <!-- <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                    nostrum, reiciendis facere nemo!</p> -->
+                                <ul class="list-inline">
+                                <li>Material : Cotton 100%</li>
+                            <li>Color : Black & Purple</li>
+                            <li>Imported</li>
+                            <div>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">Tommy Hilfiger T-shirt Boys Classic white</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+                                <!-- <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                    nostrum, reiciendis facere nemo!</p> -->
+                                <ul class="list-inline">
+                                <li>Material : Cotton 100%</li>
+                            <li>Color : Classic White</li>
+                            <li>Imported</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">Yeezy For President</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                                <!-- <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                    nostrum, reiciendis facere nemo!</p> -->
+                                <ul class="list-inline">
+                                <li>Material : Cotton 100%</li>
+                                <li>Color : White</li>
+                                <li>Imported</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">MGSM Boys Red 'Logo' T-Shirt</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+                                <!-- <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                    nostrum, reiciendis facere nemo!</p> -->
+                                <ul class="list-inline">
+                                <li>Material : Cotton 100%</li>
+                            <li>Color : Red</li>
+                            <li>Made in USA</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">Supreme 20th Anniversary Box Logo</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+                                <!-- <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                    nostrum, reiciendis facere nemo!</p> -->
+                                <ul class="list-inline">
+                                    <li>Material : Cotton 100%</li>
+                            <li>Color : Black</li>
+                            <li>Imported</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container">
+                    <div class="row" id="bottom">
                         <div class="col-lg-12" id="howTo">
-                            <hr class="new5">
-                            <div class="title">
+                        <hr class="new5">
+                            
+                            <div class="title" align="center">
 
                                 <h3>How you can buy it</h3>
                             </div>
@@ -384,7 +492,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
-                            <div class="single_works ">
+                            <div >
                                 <span>
                                     01
                                 </span>
@@ -393,7 +501,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="single_works">
+                            <div>
                                 <span>
                                     02
                                 </span>
@@ -402,7 +510,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="single_works">
+                            <div >
                                 <span>
                                     03
                                 </span>
@@ -412,21 +520,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+</div>
+ -->
 
-        </div>
-    </div>
-    <footer class="footer-area">
-        <div class="container h-100">
-            <div class="footer-icon">
-                <a href=""><span class="fas fa-store-alt"></span></span><span class="link">Location</span></a>
-                <a href=""><span class="fas fa-id-card"></span></span><span class="link">Contact Us</span></a>
-                <a href=""><span class="fas fa-user-tie"></span></span><span class="link">Director</span></a>
-            </div>
-        </div>
-    </footer>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <script src="public/jquery-3.4.1.min .js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
