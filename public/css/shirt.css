@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import "/css/navbar-style.css";
+
+.select {
+    display: flex;
+    justify-content: center;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.single_service {
+    background: rgb(161, 159, 159);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    height: 185px;
+}
+
+div {
+    display: block;
+}
+
+.shirts {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.service_icon {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    padding: 50px;
+    width: 100px;
+}
+
+.boxed-btn3 {
+    display: flex;
+    justify-content: center;
+}
+
+.type {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.containerShirt {
+    margin-top: 100px;
+}
+
+#selectItem {
+    margin-top: 20px;
+}
+
+.store {
+    display: flex;
+    justify-content: center;
+}
+
+hr.new5 {
+    border: 3px solid;
+    border-radius: 0px;
+    width: 30%;
+}
+
+#howTo {
+    margin-top: 40px;
+}
+
+#descript {
+    margin-top: 40px;
+}
+
+.navbar {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.bg-pink {
+    background: linear-gradient(to right, #ff5858, #f857a6);
+}
+
+.link {
+    width: 0;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.2s ease-in-out;
+    visibility: hidden;
+    font-size: 0px;
+}
+
+.navbar-brand, .nav li>a {
+    max-height: 50px;
+    width: auto;
+    font-size: 20px;
+}
+
+.navbar-brand:hover .link, .nav li>a:hover .link {
+    width: 100%;
+    padding: 0 5px 0 5px;
+    visibility: visible;
+    font-size: 14px;
+}
+
+.footer-area {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(240, 240, 240);
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.footer-icon {
+    text-align: center;
+    position: relative;
+    top: 35px;
+}
+
+.footer-icon a {
+    margin-right: 60px;
+    font-size: 30px;
+    color: rgb(255, 143, 163);
+}
+
+.footer-icon a:hover .link {
+    width: 100%;
+    text-decoration: none;
+    padding: 0 5px 0 5px;
+    visibility: visible;
+    font-size: 14px;
+}
+
+.card {
+    margin-top: 60px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.carouse {
+    margin-top: 60px;
+}

@@ -1,0 +1,47 @@
+.navbar{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.bg-pink{
+    background: linear-gradient(to right, #ff5858, #f857a6);
+}
+
+.link {
+    width: 0;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.2s ease-in-out;
+    visibility: hidden;
+    font-size: 0px;
+}
+
+.navbar-brand,.nav li>a{
+    max-height: 50px;
+    width: auto;
+    font-size: 24px;
+}
+
+.navbar-brand:hover .link,.nav li>a:hover .link{
+    width: 100%;
+    padding: 0 5px 0 5px;
+    visibility: visible;
+    font-size: 14px;
+}
+
+.user img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.dropdown-toggle{
+    margin-left: 15px;
+    background: none;
+    border: none;
+}
+
+.dropdown-menu{
+    margin: .125rem -70px;
+    text-align: right;
+}
