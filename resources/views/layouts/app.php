@@ -1,3 +1,8 @@
+<?php use App\Framework\Utilities\Session; ?>
+<?php use App\Models\User; ?>
+<?php $auth = Session::read('Auth'); ?>
+<?php $image_path = (new User())->find_user($auth['username'])[0]->image_path; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +35,19 @@
         </div>
   
         <span class="user">
-          <img src="/images/user_img/profiletest.jpg" alt=""> ID: admin
+          <img src="<?= $image_path ?>" alt="">ID : <?= $auth['username']; ?>
         </span>
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-chevron-circle-down"></i>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <?php if ($auth['role'] == 'admin') :?>
+              <a class="dropdown-item" href="/edit">Manage</a>
+              <?php endif; ?>
             <a class="dropdown-item" href="/edit">Edit Profile</a>
             <hr>
-            <a class="dropdown-item" href="/login">Logout</a>
+            <a class="dropdown-item" href="/login/logout">Logout</a>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+use App\Framework\Utilities\Session;
+use App\Models\User;
 
 class LoginController extends Controller {
     public function index() {
@@ -9,16 +11,23 @@ class LoginController extends Controller {
 
     public function authen() {
         $input = $this->request->input;
-
-        $user = (new User())->select_by_email($email);
-
-        if ($user && password_verify($password, $user->password)) {
+        $username = $input->username;
+        $user = (new User())->find_user($username)[0];
+        $password = $user->password;
+        if ($user && ($input->password === $password)) { //password_verify($password, $user->password)
             Session::write('Auth', [
-                'user_id' => $user->id,
-                'name' => $user->name,
-                'role' => 'Admin'
+                'id' => $user->id,
+                'username' => $user->username,
+                'role' => $user->role
             ]);
+            return $this->redirect('cart');
+        }else{
+            echo "incorrect";
         }
-        return $this->render('users/sessionGet');
+    }
+
+    public function logout() {
+        Session::destroy();
+        $this->redirect('login');
     }
 }

@@ -1,4 +1,10 @@
-<?php $this->layout('layouts/app'); ?>
+<?php $this->layout('layouts/app');
+  use App\Framework\Utilities\Session; 
+  use App\Models\User;
+  $auth = Session::read('Auth');
+  $image_path = (new User())->find_user($auth['username'])[0]->image_path;
+  $point = (new User())->find_user($auth['username'])[0]->point;
+?>
 
   <header>
     <div class="header-area">
@@ -98,9 +104,9 @@
           <div class="info">
 
             <div class="sec-user">
-              <img src="/images/profiletest.jpg" alt="">
-              <h4 style="display: inline-block">Admin</h4>
-              <p style="font-size: 18px;"><br> You have point : 2,000</p>
+              <img src="<?= $image_path ?>" alt="">
+              <h4 style="display: inline-block"><?= $auth['username'] ?></h4>
+              <p style="font-size: 18px;"><br> You have point : <?= $point ?></p>
             </div>
             <div class="sec-pay">
 

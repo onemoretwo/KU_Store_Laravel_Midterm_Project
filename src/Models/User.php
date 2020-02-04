@@ -21,5 +21,9 @@ class User extends Model{
         $data = $this->db->queryAll($sql,[':email' => $email,':pass' => $pass]);
     }
 
-    public function 
+    public function find_user($username){
+        $sql = "select * from users where username = :username limit 1";
+        $data = $this->db->queryAll($sql,[':username' => $username]);
+        return $data;
+    }
 }

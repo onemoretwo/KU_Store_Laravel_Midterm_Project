@@ -64,30 +64,28 @@
                         </div>
 
                         <div class="col-md-6 center-form" id="form1">
-                            <form  action="" class="login">
+                            <form  action="login/authen" method="post" class="login">
+
                                 <div class="input-group mb-3" style="text-align: center;">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="text" name="" class="form-control input_user" value=""
+                                    <input type="text" name="username" class="form-control input_user" value=""
                                         placeholder="username">
                                 </div>
+
                                 <div class="input-group mb-2">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" name="" class="form-control input_pass" value=""
+                                    <input type="password" name="password" class="form-control input_pass" value=""
                                         placeholder="password">
                                 </div>
-                                <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
 
-                                    </div>
-                                </div>
                                 <div class="d-flex justify-content-center mt-3 login_container">
-                                    <button type="button" name="button" class="btn login_btn">Login</button>
+                                    <button type="submit" class="btn login_btn">Login</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
