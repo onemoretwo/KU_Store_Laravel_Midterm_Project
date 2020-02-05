@@ -43,7 +43,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <?php if ($auth['role'] == 'admin') :?>
-              <a class="dropdown-item" href="/dash">Active/Ban</a>
+              <a class="dropdown-item" href="/ban">Active/Ban</a>
               <a class="dropdown-item" href="/dash">Manage</a>
               <hr>
               <?php endif; ?>
