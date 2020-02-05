@@ -24,25 +24,32 @@
           <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table table-hover table-striped mb-0">
               <thead>
-              <?php foreach ($cart as $iditem) : ?>
-                  <th>image</th>
-                  <th>name</th>
-                  <th>Price</th>
-              <?php endforeach; ?>
                 <tr>
                   <th>image</th>
                   <th>name</th>
                   <th>Price</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>#</td>
-                  <td>1</td>
-                  <td>5,000</td>
-                </tr>
+                <?php 
+                $total = 0;
+                foreach ($carts as $item) :
+                $total += $item->price ?>
+
+                    <tr>
+                      <td><img class="cart_img" src="<?= $item->image_path ?>" alt=""></td>
+                      <td><?= $item->name ?></td>
+                      <td><?= $item->price ?></td>
+                      <td><a class="btn btn-primary" href="/cart/delete_cart_item/<?= $item->id ?>"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                    
+                <?php endforeach; ?>
               </tbody>
             </table>
+          </div>
+          <div class="total">
+            <h3>Total Price: <?= $total ?> ฿</h3>
           </div>
 
         </div>
@@ -56,7 +63,7 @@
             </div>
             <div class="sec-pay">
 
-              <form action="#">
+              <form action="/cart/submit_paid/<?= $total ?>" method="post">
                 <h3 style="border-bottom:0.7px solid #dddee9;width: 120px;margin-left: -15px;">Payment</h3>
                 <div class="form-check-inline">
                   <label class="form-check-label">
@@ -81,7 +88,7 @@
                   <label for="usr">Coupon:</label>
                   <input type="text" class="form-control" placeholder="Enter coupon's ID">
                 </div>
-                <button type="button" class="btn btn-outline-success">Success</button>
+                <button type="submit" class="btn btn-outline-success">Success</button>
 
               </form>
 

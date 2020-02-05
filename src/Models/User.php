@@ -2,7 +2,6 @@
 
 namespace App\Models;
 use App\Framework\Utilities\Session; 
-$auth = Session::read('Auth');
 
 class User extends Model{
     //เชื่อมกับ table `users`
@@ -21,10 +20,10 @@ class User extends Model{
     public function update($email,$password,$id){
         $sql = "UPDATE `users`"
                 . " SET `email` = :email, `password` = :password"
-                . " WHRER `id` = :id";
+                . " WHERE `id` = :id";
         $data = $this->db->queryAll($sql,[
             ':email' => $email,
-            ':password' => $pass,
+            ':password' => $password,
             ':id' => $id
         ]);
         return $data;
@@ -44,6 +43,17 @@ class User extends Model{
     public function find_user($username){
         $sql = "select * from users where username = :username limit 1";
         $data = $this->db->queryAll($sql,[':username' => $username]);
+        return $data;
+    }
+
+    public function addPoint($userid,$point){
+        $sql = "UPDATE `users`"
+                . " SET `point` = :point"
+                . " WHERE `id` = :id";
+        $data = $this->db->queryAll($sql,[
+            ':point' => $point,
+            ':id' => $userid
+        ]);
         return $data;
     }
 }

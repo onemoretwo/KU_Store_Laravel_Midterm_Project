@@ -21,4 +21,15 @@ class Point_log extends Model{
         ]);
         return $data;
     }
+
+    public function create_log($userid,$ref_type,$point){
+        $sql = "INSERT INTO point_log (`user_id`, `ref_type`, `point`, `create_at`)"
+                . " VALUES (:user_id, :ref_type, :point, NOW())";
+        $data = $this->db->queryAll($sql, [
+            ':user_id' => $userid,
+            ':ref_type' => $ref_type,
+            ':point' => $point
+        ]);
+        return $data;
+    }
 }
