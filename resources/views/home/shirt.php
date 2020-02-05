@@ -161,9 +161,8 @@
                         <p class="text-muted">2,250 baht</p>
                         <div>
                             <div class="container">
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="	fa fa-cart-plus"></i>
-                                    Add to Cart</button>
+                                <button onclick="cart_add(1)" class="btn btn-primary" data-dismis="modal" type="buttom"><i class="	fa fa-cart-plus"></i>
+                                        Add to Cart</button>
                             </div>
 
                     </div>
@@ -185,7 +184,7 @@
                         <div>
 
                         <div class="container">
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <button onclick="cart_add(2)" class="btn btn-primary" data-dismiss="modal" type="button">
                                     <i class="	fa fa-cart-plus"></i>
                                     Add to Cart</button>
                             </div>
@@ -205,7 +204,7 @@
                         <h4>Tommy Hilfiger T-shirt Boys Classic white</h4>
                         <p class="text-muted">1,160 baht</p>
                         <div>
-                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <button onclick="cart_add(3)" class="btn btn-primary" data-dismiss="modal" type="button">
                                     <i class="	fa fa-cart-plus"></i>
                                     Add to Cart</button>
                     </div>
@@ -225,7 +224,7 @@
                         <p class="text-muted">850 baht</p>
                         <div>
                         <div class="container">
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <button onclick="cart_add(4)" class="btn btn-primary" data-dismiss="modal" type="button">
                                     <i class="	fa fa-cart-plus"></i>
                                     Add to Cart</button>
                             </div>
@@ -245,7 +244,7 @@
                         <h4>MGSM Boys Red 'Logo' T-Shirt</h4>
                         <p class="text-muted">1,160 baht</p>
                         <div>
-                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <button onclick="cart_add(5)" class="btn btn-primary" data-dismiss="modal" type="button">
                                     <i class="	fa fa-cart-plus"></i>
                                     Add to Cart</button>
                     </div>
@@ -265,7 +264,7 @@
                         <p class="text-muted">21,000 baht</p>
                         <div>
                         <div class="container">
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <button onclick="cart_add(6)" class="btn btn-primary" data-dismiss="modal" type="button">
                                     <i class="	fa fa-cart-plus"></i>
                                     Add to Cart</button>
                             </div>
@@ -560,4 +559,15 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
+
+    <script>
+        function cart_add($itemid) {
+            window.event.preventDefault();
+            $.ajax({
+                url: "/home/ajax_add/" + $itemid
+            }).done(function (message) {
+                console.log(message);
+            })
+        }
+    </script>
 
