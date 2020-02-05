@@ -25,11 +25,16 @@ class LoginController extends Controller {
                 ]);
                 return $this->redirect('home');
             }else{
-                return "incorrect password";
+               echo "<script>alert('Sorry, Your password is incorrect.')</script>";
             }
+        }else if($user!= $username){
+            echo "<script>alert('Sorry, Your username is incorrect.')</script>";
+            
         }else{
-            return "incorrect username";
+            echo "<script>alert('Please fill all inputs')</script>";
         }
+        echo "<script>window.location.href = '/login'</script>";
+
     }
 
     public function signup(){
@@ -40,7 +45,8 @@ class LoginController extends Controller {
         $rpwd = $input->rpwd;
 
         if(empty($username) && empty($email) && empty($npwd) && empty($rpwd)){
-            return "No input";
+            echo "<script>alert('All fields are required.')</script>";
+            
         }
 
         if(!empty($username)){
@@ -51,17 +57,21 @@ class LoginController extends Controller {
                         $result = (new User())->create_user($username,$email,$hash);
                         return $this->redirect('/login');
                     }else{
-                        return "password doesn't match";
+                        echo "<script>alert('Password doesn't match')</script>";
+                        
                     }
                 }else{
-                    return "warning: empty password";
+                    echo "<script>alert('Empty password')</script>";
+                    
                 }
             }else{
-               return "Email : this field doesn't empty"; 
+                echo "<script>alert('Please fill your E-mail')</script>";
+               
             }
         }else{
-            return "username: this field doesn't empty";
+            echo "<script>alert('Please fill your Username')</script>";
         }
+        echo "<script>window.location.href = '/login'</script>";
     }
 
     public function logout() {

@@ -5,6 +5,7 @@ use App\Framework\Utilities\Session;
 
 class User extends Model{
     //เชื่อมกับ table `users`
+    
 
     public function Top5()
     {
