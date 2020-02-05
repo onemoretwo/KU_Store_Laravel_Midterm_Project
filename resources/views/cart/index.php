@@ -24,73 +24,19 @@
           <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table table-hover table-striped mb-0">
               <thead>
+              <?php foreach ($cart as $iditem) : ?>
+                  <th>image</th>
+                  <th>name</th>
+                  <th>Price</th>
+              <?php endforeach; ?>
                 <tr>
-                  <th></th>
-                  <th>Item</th>
-                  <th>Number</th>
+                  <th>image</th>
+                  <th>name</th>
                   <th>Price</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                  <button type="button" class="btn btn-success">-</button>
-                  <button type="button" class="btn btn-success">+</button>
-                  </td>
-                  <td>#</td>
-                  <td>1</td>
-                  <td>5,000</td>
-                </tr>
-                <tr>
-                  <td>
-                  <button type="button" class="btn btn-success">-</button>
-                  <button type="button" class="btn btn-success">+</button>
-                  </td>
-                  <td>#</td>
-                  <td>1</td>
-                  <td>5,000</td>
-                </tr>
-                <tr>
-                  <td>
-                  <button type="button" class="btn btn-success">-</button>
-                  <button type="button" class="btn btn-success">+</button>
-                  </td>
-                  <td>#</td>
-                  <td>1</td>
-                  <td>5,000</td>
-                </tr>
-                <tr>
-                  <td>
-                  <button type="button" class="btn btn-success">-</button>
-                  <button type="button" class="btn btn-success">+</button>
-                  </td>
-                  <td>#</td>
-                  <td>1</td>
-                  <td>5,000</td>
-                </tr>
-                <tr>
-                  <td>
-                  <button type="button" class="btn btn-success">-</button>
-                  <button type="button" class="btn btn-success">+</button>
-                  </td>
-                  <td>#</td>
-                  <td>1</td>
-                  <td>5,000</td>
-                </tr>
-                <tr>
-                  <td>
-                  <button type="button" class="btn btn-success">-</button>
-                  <button type="button" class="btn btn-success">+</button>
-                  </td>
-                  <td>#</td>
-                  <td>1</td>
-                  <td>5,000</td>
-                </tr>
-                <tr>
-                  <td>
-                  <button type="button" class="btn btn-success">-</button>
-                  <button type="button" class="btn btn-success">+</button>
-                  </td>
                   <td>#</td>
                   <td>1</td>
                   <td>5,000</td>

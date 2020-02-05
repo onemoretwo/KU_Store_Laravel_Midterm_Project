@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 use App\Framework\Utilities\Session;
 use App\Models\User;
@@ -21,7 +20,7 @@ class LoginController extends Controller {
                     'username' => $user->username,
                     'role' => $user->role
                 ]);
-                return $this->redirect('cart');
+                return $this->redirect('home');
             }else{
                echo "<script>alert('Sorry, Your password is incorrect.')</script>";
             }
