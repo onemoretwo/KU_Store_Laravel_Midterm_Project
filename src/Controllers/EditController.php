@@ -15,6 +15,10 @@ class EditController extends Controller {
     }
 
     public function update(){
+        $file_name = $_FILES['file']['name'];
+        $file_tem_Loc =$_FILES['file']['tmp_name'];
+        $file_store = "images/user_img/".$file_name;
+
         $auth = Session::read('Auth');
         $input = $this->request->input;
         $current = $input->cpwd;
@@ -23,13 +27,17 @@ class EditController extends Controller {
         $user = (new User())->find_user($auth['username'])[0];;
         $old = $user->password;
         $newEmail = $input->cemail;
+        $image_path = $user->image_path;
+        if($file_store != "images/user_img/"){
+            move_uploaded_file($file_tem_Loc, $file_store);
+            $image_path = $file_store;
+        }
         if($input->email != ""){
             $newEmail = $input->email;
         }
-        if(empty($input->email) && empty($current) && empty($new) && empty($repeat)){
+        if($file_store == "images/user_img/" && empty($input->email) && empty($current) && empty($new) && empty($repeat)){
             return "No input";
         }
-
         if(!empty($current) or !empty($new) or !empty($repeat)){
             if(!empty($current)){
                 if(!password_verify($current,$user->password)){
@@ -37,7 +45,7 @@ class EditController extends Controller {
                 }
                 if(!empty($new) and !empty($repeat)){
                     if($new == $repeat){
-                        $result = (new User())->update($newEmail,password_hash($new,PASSWORD_DEFAULT),$auth['id']);
+                        $result = (new User())->update($newEmail,password_hash($new,PASSWORD_DEFAULT),$image_path,$auth['id']);
                         return $this->redirect('/edit');
                     }else{
                         return "password doesn't match";
@@ -49,12 +57,8 @@ class EditController extends Controller {
                 return "please enter current password";
             }
         }else{
-            $result = (new User())->update($newEmail,$old,$auth['id']);
+            $result = (new User())->update($newEmail,$old,$image_path,$auth['id']);
             return $this->redirect('/edit');
         }
-    }
-
-    public function update_pic(){
-        
     }
 }

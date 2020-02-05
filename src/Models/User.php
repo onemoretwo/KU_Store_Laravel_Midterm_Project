@@ -18,13 +18,14 @@ class User extends Model{
         $data = $this->db->queryAll($sql);
     }
 
-    public function update($email,$password,$id){
+    public function update($email,$password,$image_path,$id){
         $sql = "UPDATE `users`"
-                . " SET `email` = :email, `password` = :password"
+                . " SET `email` = :email, `password` = :password, `image_path` = :image_path"
                 . " WHERE `id` = :id";
         $data = $this->db->queryAll($sql,[
             ':email' => $email,
             ':password' => $password,
+            ':image_path' => $image_path,
             ':id' => $id
         ]);
         return $data;
@@ -56,5 +57,31 @@ class User extends Model{
             ':id' => $userid
         ]);
         return $data;
+    }
+
+    public function getAllUser(){
+        $sql = "select * from users where `role` = 'user'";
+        $data = $this->db->queryAll($sql);
+        return $data;
+    }
+
+    public function toggleStatus($id){
+        $sql = "select * from users where id = :id";
+        $user = $this->db->queryFirst($sql,[
+            ':id' => $id
+        ]);
+        $userStatus = $user->status;
+        $newStatus = 'ban';
+        if($userStatus == 'ban'){
+            $newStatus = 'active';
+        }
+        $sql = "UPDATE `users`"
+                . " SET `status` = :status"
+                . " WHERE id = :id";
+        $result = $this->db->queryAll($sql,[
+            ':status' => $newStatus,
+            ':id' => $id
+        ]);
+        return $result;
     }
 }
