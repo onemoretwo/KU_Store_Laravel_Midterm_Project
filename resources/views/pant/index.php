@@ -29,7 +29,7 @@
 <body id="page-top">
 
 
- <!-- <div class=" carouse">
+<!-- <div class=" carouse">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" style="height: 450px;">
                     <div class="carousel-item active">
@@ -51,7 +51,7 @@
                     <span class="sr-only">Next</span>
                 </a>
 
-            </div>   -->
+            </div> -->
 
 
 
@@ -154,7 +154,7 @@
                                 <i class="fa fa-eye fa-3x" ></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/leisure.jpeg')?>" alt="">
+                        <img class="img-fluid" style="width: 18rem; height: 15rem;" src="<?= $this->asset('/images/pant industrial off white.jpeg') ?>" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Champion Leisure hoodie</h4>
@@ -177,7 +177,7 @@
                                 <i class="fa fa-eye fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/shirt bape.jpeg')?>" alt="">
+                        <img class="img-fluid" style="width: 18rem; height: 15rem;" src="<?= $this->asset('/images/pant yeezy.jpeg') ?>" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Black & Purple bape shirt</h4>
@@ -348,7 +348,7 @@
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p> -->
-                                <ul class="list-inline" >
+                                <ul class="list-inline" style="font-size:1.5rem">
                                 <li>Material : Cotton 100%</li>
                             <li>Color : Black & Purple</li>
                             <li>Imported</li>
@@ -384,7 +384,7 @@
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p> -->
-                                <ul class="list-inline">
+                                <ul class="list-inline" style="font-size:1.5rem">
                                 <li>Material : Cotton 100%</li>
                             <li>Color : Classic White</li>
                             <li>Imported</li>
@@ -419,7 +419,7 @@
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p> -->
-                                <ul class="list-inline">
+                                <ul class="list-inline" style="font-size:1.5rem">
                                 <li>Material : Cotton 100%</li>
                                 <li>Color : White</li>
                                 <li>Imported</li>
@@ -454,7 +454,7 @@
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p> -->
-                                <ul class="list-inline">
+                                <ul class="list-inline" style="font-size:1.5rem">
                                 <li>Material : Cotton 100%</li>
                             <li>Color : Red</li>
                             <li>Made in USA</li>
@@ -489,7 +489,7 @@
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p> -->
-                                <ul class="list-inline">
+                                <ul class="list-inline" style="font-size:1.5rem">
                                     <li>Material : Cotton 100%</li>
                             <li>Color : Black</li>
                             <li>Imported</li>
