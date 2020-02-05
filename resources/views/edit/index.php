@@ -1,5 +1,13 @@
 <?php $this->layout('layouts/app'); ?>
 <link rel="stylesheet" href="<?= $this->asset('/css/edit-style.css') ?>">
+<?php use App\Framework\Utilities\Session; 
+  use App\Models\User;
+  $auth = Session::read('Auth');
+  $cemail = (new User())->find_user($auth['username'])[0]->email;
+  $point = (new User())->find_user($auth['username'])[0]->point;
+  $role = (new User())->find_user($auth['username'])[0]->role;
+  $image_path = (new User())->find_user($auth['username'])[0]->image_path;
+?>
 
 
     <header>
@@ -15,24 +23,18 @@
         <div class="container divide-2">
           <div class="profile">
             <h2>My Profile</h2>
-            <span><img src="/images/user_img/profiletest.jpg" alt=""></span>
-            <span>admin</span>
-            <!-- upload picture form -->
-            <form action="/edit/upload_pic" method="post">
-              <input type="file" name="file">
-              <input type="submit" name="submit">
-            </form>
-            <!-- ------------------------------ -->
+            <span><img src="<?= $image_path ?>" alt=""></span>
+            <span><?= $auth['username']; ?></span>
             <div class="profile-info">
-              <p>Email : admin@ku.th</p>
-              <p>Point : 10000</p>
-              <p>Status : user</p>
+              <p>email : <?= $cemail ?></p>
+              <p>point : <?= $point ?></p>
+              <p>Status : <?= $role ?></p>
             </div>
           </div>
 
           <div class="edit">
             <div>
-              <h2>Weekly point got</h2>
+              <h2>All point got</h2>
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table table-hover table-striped mb-0">
               <thead>
@@ -59,7 +61,7 @@
           </div>
           <!----------------------------------------->
           <div>
-              <h2>Weekly point used</h2>
+              <h2>All point used</h2>
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table table-hover table-striped mb-0">
               <thead>
@@ -91,21 +93,52 @@
         </div>
     </section>
     <section class="section2">
-      <div class="container">
-        <form action="edit/update" method="post">
-          
-          <div>
-            <label for="email">Email edit</label>
-            <input type="hidden" name="default_email" value="arnon@ku.th">
-            <input type="text" name="email">
-          </div>
+      <div class="container con">
+        <h2>Edit Profile</h2>
 
-          <div>
-            <label for="pass">password edit</label>
-            <input type="text" name="pass">
-          </div>
+    <form class="form-horizontal" action="/edit/update" method="post" enctype="multipart/form-data">
 
-          <button type="submit">Edit</button>
-        </form>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Change profile picture:</label>
+        <div class="col-sm-10">
+          <input type="file" name="file">
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" placeholder="Enter new email" name="email">
+          <input type="hidden" class="form-control" id="email" name="cemail"value="<?= $cemail ?>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Current Password:</label>
+        <div class="col-sm-10">          
+          <input type="password" class="form-control" id="pwd" placeholder="Enter current password" name="cpwd">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">New Password:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="email" placeholder="Enter new password" name="npwd">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Repeat Password:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="email" placeholder="Enter repeat password" name="rpwd">
+        </div>
+      </div>
+
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    </form>
       </div>
     </section>

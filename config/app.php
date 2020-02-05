@@ -3,7 +3,7 @@
 return [
 
     'default' => [
-        'controller' => 'home',
+        'controller' => 'login',
         'method' => 'index'
     ],
 

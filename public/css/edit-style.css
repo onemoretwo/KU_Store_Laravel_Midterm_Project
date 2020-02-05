@@ -67,3 +67,18 @@
 .usepoint{
     color: red;
 }
+
+.btn{
+    border-color: green;
+}
+
+.con{
+    padding-left: 150px;
+}
+
+.container h2{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
