@@ -52,57 +52,86 @@ $current_user = (new User())->find_user($auth['username'])[0];
   </div>
 </section>
 
-<section class="section-form">
-  <div class="row container">
-    <div class="col-12 col-lg-4" style="border-right: 2px solid #dddee9">
-      <div class="myPoint">
-        <img src="<?= $current_user->image_path ?>" alt="">
-        <h4 style="display: inline-block"><?= $current_user->username ?></h4>
-        <p style="font-size: 18px;"><br> You have point : <?= $current_user->point ?></p>
+
+
+<h2 align="center" style="font-size: 50px; font-weight: bold;">Redeem Reward</h2>
+<div class="container mb-5 mt-5">
+    <div class="pricing card-deck flex-column flex-md-row mb-3">
+        <div class="card card-pricing text-center px-3 mb-4">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Premium</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">Discount 20%</h1>
+            </div>
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li>Use 750 points.</li>
+                    
+                </ul>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Redeem now
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Redeem Reward</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure to use your points?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Redeem</button>
       </div>
     </div>
-    <div class="col-12 col-lg-8 flex-dis">
-      <div class="container" style="width: 50%">
-        <div class="row justify-content-center">
-          <form action="">
-            <a href="#" class="btn btn-warning" role="button">discount 50%</a>
-
-          </form>
-        </div>
-      </div>
-      <div class="contaier" style="width: 50%">
-        <div class="row justify-content-center">
-          <form action="">
-            <a href="#" class="btn btn-warning" role="button">discount 50%</a>
-
-          </form>
-        </div>
-
-      </div>
-      <!-- <div class="container">
-              <div class="row">
-             <div class="col-md-6">
-      <form action="">
-                  <a href="#" class="btn btn-warning" role="button">discount 50%</a>
-                 
-                  </form></div>
-    
-    
-    <div class="col"> 
-      <form action="">
-                  <a href="#" class="btn btn-danger" role="button">discount 500 ฿</a>
-                 
-                  </form>
-                </div>
-    
   </div>
 </div>
-             
-                <div class="coupon-code">
-                  hello2
-                </div>
-              </div>
-                 -->
+            </div>
+        </div>
+        <div class="card card-pricing popular shadow text-center px-3 mb-4">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Normal</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="30">Discount 500 ฿</span></h1>
+            </div>
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li>Use 250 points</li>
+                    
+                </ul>
+                
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Redeem now
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Redeem Reward</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure to use your points?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Redeem</button>
+      </div>
     </div>
   </div>
-</section>
+</div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
