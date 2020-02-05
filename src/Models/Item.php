@@ -37,7 +37,11 @@ class Item extends Model{
         ]);
         return $data;
     }
-    public function delete($name,$type,$price,$desc,$imamge_path){
-        $sql ="DELETE FROM items WHERE id";
+    public function delete($itemid){
+        $sql ="DELETE FROM items WHERE id = :id";
+        $data = $this->db->queryAll($sql,[
+            ':id' => $itemid
+        ]);
+        return data;
     }
 }

@@ -46,5 +46,14 @@ class User extends Model{
         $data = $this->db->queryAll($sql,[':username' => $username]);
         return $data;
     }
-    
+    public function addPoint($userid,$point){
+        $sql = "UPDATE `users`"
+                . " SET point = :point"
+                . " WHERE id = :id";
+        $data = $this->db->queryAll($sql,[
+            ':point' => $point,
+            ':id' => $userid
+        ]);
+        return $data;
+    }
 }

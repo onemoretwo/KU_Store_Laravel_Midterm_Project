@@ -3,12 +3,16 @@
 namespace App\Controllers;
 use App\Framework\Utilities\Session;
 use App\Models\Cart_item;
+use App\Models\Item;
 
 
 
 class HomeController extends Controller {
     public function index() {
-        return $this->render('home/shirt');
+        $products = (new Item())->productList();
+        return $this->render('home/shirt',[
+            'products' => $products
+        ]);
     }
 
     public function add(){

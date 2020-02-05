@@ -64,9 +64,9 @@
                                         <td><?= $product->name?></td>
                                         <td><?= $product->description?></td>
                                         <td><?= $product->price?></td>
-                                        <td><button type="button" class="btn btn-default btn-sm">
-                                                    <span class="glyphicon glyphicon-trash"></span>
-                                                </button></td>
+                                        <td><a class="btn btn-default btn-sm" href="/admin/delete_items/<?= $product->id ?>" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+
+                                        </td>
                                         
                                     </tr>
                                     
