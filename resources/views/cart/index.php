@@ -86,9 +86,9 @@
                 </div>
                 <div class="form-group" style="margin-left: -30px;">
                   <label for="usr">Coupon:</label>
-                  <input type="text" class="form-control" placeholder="Enter coupon's ID">
+                  <input type="text" class="form-control" placeholder="Enter coupon's ID" name="code">
                 </div>
-                <button type="submit" class="btn btn-outline-success">Success</button>
+                <button type="submit" class="btn btn-outline-success">Confirm</button>
 
               </form>
 
