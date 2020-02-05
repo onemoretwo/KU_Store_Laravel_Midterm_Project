@@ -47,4 +47,5 @@ class User extends Model{
         $data = $this->db->queryAll($sql,[':username' => $username]);
         return $data;
     }
+    
 }

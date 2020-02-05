@@ -37,4 +37,7 @@ class Item extends Model{
         ]);
         return $data;
     }
+    public function delete($name,$type,$price,$desc,$imamge_path){
+        $sql ="DELETE FROM items WHERE id";
+    }
 }
