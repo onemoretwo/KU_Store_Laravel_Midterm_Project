@@ -6,6 +6,7 @@ $auth = Session::read('Auth');
 
 class User extends Model{
     //เชื่อมกับ table `users`
+    
 
     public function Top5()
     {

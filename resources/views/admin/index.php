@@ -56,7 +56,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                    <?php foreach($products as $product) : ?>
+                                    <tr>
+                                    
+                                        <td><?= $product->type?></td>
+                                        <td><img style="width:90px;,height:90px;"src="<?= $product->image_path?>" alt=""></td>
+                                        <td><?= $product->name?></td>
+                                        <td><?= $product->description?></td>
+                                        <td><?= $product->price?></td>
+                                        <td><button type="button" class="btn btn-default btn-sm">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </button></td>
+                                        
+                                    </tr>
+                                    
+<?php endforeach; ?>
+
+
+                                        <!-- <tr>
                                             <td>Shirt</td>
                                             <td>Picture</td>
                                             <td>original</td>
@@ -106,7 +123,7 @@
                                             <td><button type="button" class="btn btn-default btn-sm">
                                                     <span class="glyphicon glyphicon-trash"></span>
                                                 </button></td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -116,40 +133,40 @@
                 <div id="menu1" class="container tab-pane fade"><br>
                     <div class="container">
 
-                        <form>
+                        <form action="/admin/upload_item" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="exampleSelect1">Type</label>
-                                <select class="form-control" id="exampleSelect1">
-                                    <option>Shirts</option>
-                                    <option>Pants</option>
-                                    <option>Accessories</option>
+                                <select class="form-control" id="exampleSelect1" name="type">
+                                    <option value="Shirts">Shirts</option>
+                                    <option values="Pants">Pants</option>
+                                    <option value="Accessories">Accessories</option>
                                     
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Name</label>
-                                <input type="" class="form-control" >
+                                <input type="text" class="form-control" name="name">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"></textarea>
                               </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Price</label>
-                                <input type="" class="form-control" >
+                                <input type="text" class="form-control" name="price">
                             </div>
                             
-                            <form class="md-form">
+                            
                                 <div class="file-field">
                                   <div class="btn btn-primary btn-sm float-left">
                                     <span>Choose file</span>
-                                    <input type="file">
+                                    <input type="file" name="file">
                                   </div>
                                   <div class="file-path-wrapper">
                                     
                                   </div>
                                 </div>
-                              </form>
+                              
                             
                             <button type="submit" class="btn btn-primary">Add</button>
                         </form>
@@ -164,4 +181,4 @@
 
 
 
-</body>
+
