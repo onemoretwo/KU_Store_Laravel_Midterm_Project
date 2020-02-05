@@ -34,4 +34,13 @@ class AdminController extends Controller {
         $result = (new Item())->insert($name,$type,$price, $desc,$file_store);
         return $this->redirect('admin');
     }
+    public function delete_items(){
+        if(!isset($this->request->params[0])){
+            throw new Exception("Param[0] is required");
+        }
+        $itemid = $this->request->params[0];
+        $result = (new Item())->delete($itemid);
+        return $this->redirect('admin');
+        
+    }
 }

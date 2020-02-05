@@ -50,7 +50,6 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-
             </div>   -->
 
 
@@ -147,6 +146,9 @@
                 </div>
             </div>
             <div class="row">
+
+            <?php foreach ($products as $product) : ?>
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                         <div class="portfolio-hover">
@@ -154,14 +156,14 @@
                                 <i class="fa fa-eye fa-3x" ></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/leisure.jpeg')?>" alt="">
+                        <img class="img-fluid" src="<?= $product->image_path ?>" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Champion Leisure hoodie</h4>
-                        <p class="text-muted">2,250 baht</p>
+                        <h4><?= $product->name ?></h4>
+                        <p class="text-muted"><?= $product->price ?> baht</p>
                         <div>
                             <div class="container">
-                                <a href="home/add/1" class="btn btn-primary" data-dismis="modal" type="buttom"><i class="	fa fa-cart-plus"></i>
+                                <a href="home/add/<?= $product->id ?>" class="btn btn-primary" data-dismis="modal" type="buttom"><i class="	fa fa-cart-plus"></i>
                                         Add to Cart</a>
                             </div>
 
@@ -169,108 +171,8 @@
                     </div>
 
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-eye fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/shirt bape.jpeg')?>" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Black & Purple bape shirt</h4>
-                        <p class="text-muted">2,300 baht</p>
-                        <div>
+            <?php endforeach; ?>
 
-                        <div class="container">
-                            <a href="home/add/2" class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="	fa fa-cart-plus"></i>
-                                    Add to Cart</a>
-                            </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-eye fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/shirt classic white tommy.jpeg')?>" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Tommy Hilfiger T-shirt Boys Classic white</h4>
-                        <p class="text-muted">1,160 baht</p>
-                        <div>
-                        <a href="home/add/3" class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="	fa fa-cart-plus"></i>
-                                    Add to Cart</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-eye fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/shirt yeezy for president.jpeg')?>" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Yeezy For President</h4>
-                        <p class="text-muted">850 baht</p>
-                        <div>
-                        <div class="container">
-                        <a href="home/add/4" class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="	fa fa-cart-plus"></i>
-                                    Add to Cart</a>
-                            </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-eye fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/MSGM.jpeg')?>" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>MGSM Boys Red 'Logo' T-Shirt</h4>
-                        <p class="text-muted">1,160 baht</p>
-                        <div>
-                        <a href="home/add/5" class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="	fa fa-cart-plus"></i>
-                                    Add to Cart</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-eye fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="<?=$this->asset('/images/shirt supreme.jpeg')?>" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Supreme 20th Anniversary Box Logo</h4>
-                        <p class="text-muted">21,000 baht</p>
-                        <div>
-                        <div class="container">
-                        <a href="home/add/6" class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="	fa fa-cart-plus"></i>
-                                    Add to Cart</a>
-                            </div>
-                    </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -505,9 +407,7 @@
                     <div class="row" id="bottom">
                         <div class="col-lg-12" id="howTo">
                         <hr class="new5">
-
                             <div class="title" align="center">
-
                                 <h3>How you can buy it</h3>
                             </div>
                         </div>
@@ -569,4 +469,3 @@
             })
         }
     </script> -->
-
