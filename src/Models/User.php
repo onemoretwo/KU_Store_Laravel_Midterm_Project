@@ -13,11 +13,6 @@ class User extends Model{
         return $data;
     }
 
-    public function update_pic($url){
-        $sql = "update users set image_path = ".$url." where id = 1";
-        $data = $this->db->queryAll($sql);
-    }
-
     public function update($email,$password,$image_path,$id){
         $sql = "UPDATE `users`"
                 . " SET `email` = :email, `password` = :password, `image_path` = :image_path"
@@ -47,6 +42,7 @@ class User extends Model{
         $data = $this->db->queryAll($sql,[':username' => $username]);
         return $data;
     }
+    
     public function addPoint($userid,$point){
         $sql = "UPDATE `users`"
                 . " SET point = :point"

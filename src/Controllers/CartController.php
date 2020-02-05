@@ -37,7 +37,21 @@ class CartController extends Controller {
         $user = (new User())->find_user($auth['username'])[0];
         $userid = $auth['id'];
         $coupon = (new Coupon())->findCoupon($userid,$coupon_code);
-        return $coupon;
+        if($coupon_code != "" ){
+            if(!$coupon){
+                return "Your coupon code is incorrect";
+            }else{
+                if($coupon->type == 'normal'){
+                    $totalpaid -= 500;
+                }else{
+                    $totalpaid *= 0.8;
+                }
+                if($totalpaid < 0){
+                    $totalpaid = 0;
+                }
+                $result = (new Coupon())->useCoupon($coupon->id);
+            }
+        }
         $point = $totalpaid/20;
         $totalpoint = $user->point + $point;
         $clearCart = (new Cart_item())->clear_cart($userid);
