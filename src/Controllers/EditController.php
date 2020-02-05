@@ -36,25 +36,28 @@ class EditController extends Controller {
             $newEmail = $input->email;
         }
         if($file_store == "images/user_img/" && empty($input->email) && empty($current) && empty($new) && empty($repeat)){
-            return "No input";
+            echo "<script>alert('Please fill all inputs.')</script>";
         }
         if(!empty($current) or !empty($new) or !empty($repeat)){
             if(!empty($current)){
                 if(!password_verify($current,$user->password)){
-                    return "Current password is incorrect";
+                    echo "<script>alert('Current password is incorrect')</script>";
                 }
                 if(!empty($new) and !empty($repeat)){
                     if($new == $repeat){
                         $result = (new User())->update($newEmail,password_hash($new,PASSWORD_DEFAULT),$image_path,$auth['id']);
                         return $this->redirect('/edit');
                     }else{
-                        return "password doesn't match";
+                        echo "<script>alert('password doesn't match')</script>";
+                        
                     }
                 }else{
-                    return "please enter new password";
+                    echo "<script>alert('Please enter your new password')</script>";
+                    
                 }
             }else{
-                return "please enter current password";
+                echo "<script>alert('Please enter your current password.')</script>";
+                
             }
         }else{
             $result = (new User())->update($newEmail,$old,$image_path,$auth['id']);
