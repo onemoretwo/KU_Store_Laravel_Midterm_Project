@@ -13,6 +13,9 @@ class LoginController extends Controller {
         $username = $input->username;
         $user = (new User())->find_user($username)[0];
         $password = $input->password;
+        if($user->status == "ban"){
+            return "Your account has been banned";
+        }
         if ($user){
             if(password_verify($password,$user->password)){
                 Session::write('Auth', [

@@ -20,8 +20,8 @@ class EditController extends Controller {
         $current = $input->cpwd;
         $new = $input->npwd;
         $repeat = $input->rpwd;
-        $user = (new User())->find_user($auth['username'])[0];
-
+        $user = (new User())->find_user($auth['username'])[0];;
+        $old = $user->password;
         $newEmail = $input->cemail;
         if($input->email != ""){
             $newEmail = $input->email;
@@ -37,7 +37,7 @@ class EditController extends Controller {
                 }
                 if(!empty($new) and !empty($repeat)){
                     if($new == $repeat){
-                        $result = (new User())->update($newEmail,password_hash($new),$auth['id']);
+                        $result = (new User())->update($newEmail,password_hash($new,PASSWORD_DEFAULT),$auth['id']);
                         return $this->redirect('/edit');
                     }else{
                         return "password doesn't match";
@@ -49,8 +49,7 @@ class EditController extends Controller {
                 return "please enter current password";
             }
         }else{
-            $new = $old;
-            $result = (new User())->update($newEmail,password_hash($new),$auth['id']);
+            $result = (new User())->update($newEmail,$old,$auth['id']);
             return $this->redirect('/edit');
         }
     }

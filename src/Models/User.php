@@ -2,7 +2,6 @@
 
 namespace App\Models;
 use App\Framework\Utilities\Session; 
-$auth = Session::read('Auth');
 
 class User extends Model{
     //เชื่อมกับ table `users`
@@ -22,10 +21,10 @@ class User extends Model{
     public function update($email,$password,$id){
         $sql = "UPDATE `users`"
                 . " SET `email` = :email, `password` = :password"
-                . " WHRER `id` = :id";
+                . " WHERE `id` = :id";
         $data = $this->db->queryAll($sql,[
             ':email' => $email,
-            ':password' => $pass,
+            ':password' => $password,
             ':id' => $id
         ]);
         return $data;
