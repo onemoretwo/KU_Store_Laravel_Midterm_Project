@@ -1,10 +1,10 @@
 <?php $this->layout('layouts/app'); ?>
-<link rel="stylesheet" href="<?= $this->asset('/css/ban-style.css') ;
-use App\Framework\Utilities\Session;
+<link rel="stylesheet" href="/css/ban-style.css">
+<?php use App\Framework\Utilities\Session;
 use App\Models\User;
 $auth = Session::read('Auth');
 $current_user = (new User())->find_user($auth['username'])[0]
-?>">
+?>
 
 <header>
     <div class="header-area">
@@ -16,6 +16,39 @@ $current_user = (new User())->find_user($auth['username'])[0]
   </header>
 
   <section class="section1">
+
+  <div class="container">
+    <br/>
+	<div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <form class="card card-sm">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-lg btn-success" type="submit"><i class="fas fa-search h4 text-body"></i></button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>
+</div>
+
+  <!-- <div align="center" class="container">
+      <form class="form-horizontal" action="/edit/update" method="post" enctype="multipart/form-data">
+      <h3>Search by username :</h3>
+      <input type="password" class="form-control" id="email" placeholder="Enter repeat password" name="rpwd">
+      <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+  </div> -->
 
   <div class="container table100 ver2 m-b-110">
 <div class="table100-head">

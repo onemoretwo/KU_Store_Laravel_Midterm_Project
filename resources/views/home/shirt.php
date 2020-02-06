@@ -1,5 +1,5 @@
 <?php $this->layout('layouts/app');?>
-<link rel="stylesheet" href="<?=$this->asset('/css/agency.min.css')?>">
+
 
 <head>
 
@@ -19,7 +19,6 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
         type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
@@ -130,6 +129,7 @@
 
                             </div>
 
+
                         </div>
                     </div>
 
@@ -212,9 +212,9 @@
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p> -->
                                 <ul class="list-inline" style="font-size:1.5rem">
-                                <li><?= $product->description?></li>
-                                <!-- <li>Color : White</li>
-                                <li>Imported</li> -->
+                                <li>Material : Cotton 50%, Polyester 50%</li>
+                                <li>Color : White</li>
+                                <li>Imported</li>
                                 </ul>
 
                             </div>
@@ -224,49 +224,6 @@
             </div>
         </div>
     </div>
-<?php endforeach; ?>
-
-    <!-- <div class="container">
-                    <div class="row" id="bottom">
-                        <div class="col-lg-12" id="howTo">
-                        <hr class="new5">
-                            <div class="title" align="center">
-                                <h3>How you can buy it</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div >
-                                <span>
-                                    01
-                                </span>
-                                <h3>Select item(s)</h3>
-                                <p>Find the item(s) which you want to select</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div>
-                                <span>
-                                    02
-                                </span>
-                                <h3>Add to cart</h3>
-                                <p>If you have item,Select it by add to cart.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div >
-                                <span>
-                                    03
-                                </span>
-                                <h3>Purchase it</h3>
-                                <p>Check your item(s) which you select and purchase it by the methods.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-</div>
- -->
 
 
     <!-- Bootstrap core JavaScript -->
@@ -283,12 +240,3 @@
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
 
-    <!-- <script>
-        function cart_add($itemid) {
-            $.ajax({
-                url: "/home/add/" + $itemid
-            }).done(function (message) {
-                console.log(message);
-            })
-        }
-    </script> -->

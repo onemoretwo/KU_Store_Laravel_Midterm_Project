@@ -55,6 +55,7 @@ $current_user = (new User())->find_user($auth['username'])[0];
 
 
 <h2 align="center" style="font-size: 50px; font-weight: bold;">Redeem Reward</h2>
+<h4 align="center" style="font-size: 40px;margin-top: 20px">Your point: <?= $current_user->point ?></h4>
 <div class="container mb-5 mt-5">
     <div class="pricing card-deck flex-column flex-md-row mb-3">
         <div class="card card-pricing text-center px-3 mb-4">
@@ -67,12 +68,12 @@ $current_user = (new User())->find_user($auth['username'])[0];
                     <li>Use 750 points.</li>
                     
                 </ul>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary btn-redeem" data-toggle="modal" data-target="#exampleModalpremium">
   Redeem now
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalpremium" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -86,7 +87,7 @@ $current_user = (new User())->find_user($auth['username'])[0];
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Redeem</button>
+        <form action="reward/getCoupon/premium" method="post"><button type="submit" class="btn btn-primary">Redeem</button></form>
       </div>
     </div>
   </div>
@@ -103,13 +104,10 @@ $current_user = (new User())->find_user($auth['username'])[0];
                     <li>Use 250 points</li>
                     
                 </ul>
-                
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Redeem now
-</button>
+                <button type="submit" class="btn btn-primary btn-redeem" data-toggle="modal" data-target="#exampleModalnormal">Redeem now</button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalnormal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -123,7 +121,7 @@ $current_user = (new User())->find_user($auth['username'])[0];
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Redeem</button>
+        <form action="reward/getCoupon/normal"><button type="submit" class="btn btn-primary">Redeem</button></form>
       </div>
     </div>
   </div>
