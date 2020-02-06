@@ -28,11 +28,11 @@ $current_user = (new User())->find_user($auth['username'])[0]
                                     </div>
                                     <!--end of col-->
                                     <div class="col">
-                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
+                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search Username">
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto">
-                                        <button class="btn btn-lg btn-success" type="submit"><i class="fas fa-search h4 text-body"></i></button>
+                                    <button type="submit"><i class="fa fa-search fa-2x"></i></button>
                                     </div>
                                     <!--end of col-->
                                 </div>
@@ -50,7 +50,7 @@ $current_user = (new User())->find_user($auth['username'])[0]
       </form>
   </div> -->
 
-  <div class="container table100 ver2 m-b-110">
+  <div class="container table100 ver2 m-b-110" style="margin-top:80px">
 <div class="table100-head">
 <table>
 <thead>

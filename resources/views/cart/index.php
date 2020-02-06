@@ -84,10 +84,13 @@
                   <label for="usr">Address:</label>
                   <input type="text" class="form-control" placeholder="Enter Shipping address">
                 </div>
-                <div class="form-group" style="margin-left: -30px;">
-                  <label for="usr">Coupon:</label>
-                  <input type="text" class="form-control" placeholder="Enter coupon's ID" name="code">
-                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Coupon:</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="code">
+                      <option><?php ?></option>
+                      
+                    </select>
+                  </div>
                 <button type="submit" class="btn btn-outline-success">Confirm</button>
 
               </form>
