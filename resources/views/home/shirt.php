@@ -241,13 +241,3 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
-
-    <!-- <script>
-        function cart_add($itemid) {
-            $.ajax({
-                url: "/home/add/" + $itemid
-            }).done(function (message) {
-                console.log(message);
-            })
-        }
-    </script> -->

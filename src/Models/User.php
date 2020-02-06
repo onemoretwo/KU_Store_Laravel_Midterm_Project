@@ -79,4 +79,12 @@ class User extends Model{
         ]);
         return $result;
     }
+
+    public function search($keyword){
+        $sql = "select * from users where username like '%:keyword%'";
+        $data = $this->db->queryAll($sql, [
+            ':keyword' => $keyword
+        ]);
+        return $data;
+    }
 }

@@ -8,11 +8,13 @@ use Exception;
 
 class AdminController extends Controller {
     public function index() {
-        {
-            $products = (new Item())->productList();
-            // var_dump($products);
-            return $this->render('admin/index', ["products" => $products]);
+        $auth = Session::read('Auth');
+
+        if (!$auth or $auth['role'] != 'Admin') {
+            return 'You have no permission';
         }
+        $products = (new Item())->productList();
+        return $this->render('admin/index', ["products" => $products]);
     }
  
     
@@ -32,7 +34,6 @@ class AdminController extends Controller {
         $price = $input->price;
         $desc = $input->desc;
         
-        // return $name." ".$type." ".$price." ".$desc." ".$file_store;
         $result = (new Item())->insert($name,$type,$price, $desc,$file_store);
         return $this->redirect('admin');
     }
