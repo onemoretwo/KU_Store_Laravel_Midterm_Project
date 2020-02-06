@@ -17,31 +17,6 @@ $current_user = (new User())->find_user($auth['username'])[0]
 
   <section class="section1">
 
-  <div class="container">
-    <br/>
-	<div class="row justify-content-center">
-                        <div class="col-12 col-md-10 col-lg-8">
-                            <form class="card card-sm">
-                                <div class="card-body row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        
-                                    </div>
-                                    <!--end of col-->
-                                    <div class="col">
-                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search Username">
-                                    </div>
-                                    <!--end of col-->
-                                    <div class="col-auto">
-                                    <button type="submit"><i class="fa fa-search fa-2x"></i></button>
-                                    </div>
-                                    <!--end of col-->
-                                </div>
-                            </form>
-                        </div>
-                        <!--end of col-->
-                    </div>
-</div>
-
   <!-- <div align="center" class="container">
       <form class="form-horizontal" action="/edit/update" method="post" enctype="multipart/form-data">
       <h3>Search by username :</h3>

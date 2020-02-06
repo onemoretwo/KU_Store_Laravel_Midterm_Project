@@ -33,4 +33,12 @@ class Coupon extends Model{
         ]);
         return $data;
     }
+
+    public function getAllCoupon($id){
+        $sql = "select * from coupons where `user_id` = :id and `status` = 'available'" ;
+        $data = $this->db->queryAll($sql, [
+            ':id' => $id
+        ]);
+        return $data;
+    }
 }

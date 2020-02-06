@@ -84,10 +84,13 @@
                   <label for="usr">Address:</label>
                   <input type="text" class="form-control" placeholder="Enter Shipping address">
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-left: -30px;">
                   <label for="exampleFormControlSelect1">Coupon:</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="code">
-                      <option><?php ?></option>
+                      <option value=""></option>
+                      <?php foreach ($coupons as $coupon) : ?>
+                        <option value="<?= $coupon->coupon_code ?>"><?= $coupon->coupon_code ?>  /  <?= $coupon->type ?></option>
+                      <?php endforeach; ?>
                       
                     </select>
                   </div>

@@ -81,9 +81,9 @@ class User extends Model{
     }
 
     public function search($keyword){
-        $sql = "select * from users where username like '%:keyword%'";
+        $sql = "select * from users where username like :keyword";
         $data = $this->db->queryAll($sql, [
-            ':keyword' => $keyword
+            ':keyword' => '%'.$keyword.'%'
         ]);
         return $data;
     }
