@@ -12,7 +12,7 @@
     width: 980px;
     margin-top: 14rem;
     margin-bottom: auto;
-    background:#f39412;
+    background-color: rgb(245, 130, 255);
     position: relative;
     display: flex;
     justify-content: center;
@@ -79,16 +79,7 @@
     border-left: 6px solid white;
     height: 300px;
   }
-  /* .login{
-    align-items: center;
-  }
-  .signUp{
-    align-items: center;
-  } */
-  /* #form1{
-    margin-left: 40px;
-  
-  } */
+
 
 .row{
   flex-wrap: nowrap;
@@ -100,7 +91,3 @@
 .margin-r{
   margin-right: 40px;
 }
-/* #form1{
-  margin-right: 40px;
-
-} */

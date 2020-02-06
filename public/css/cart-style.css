@@ -121,7 +121,7 @@ body{
     color: rgb(255, 143, 163);
 }
 
-.footer-icon a:hover .link{
+.footer-icon a:hover .link {
     width: 100%;
     text-decoration: none;
     padding: 0 5px 0 5px;

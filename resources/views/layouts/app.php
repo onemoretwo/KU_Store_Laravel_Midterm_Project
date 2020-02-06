@@ -39,7 +39,7 @@
         </span>
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-chevron-circle-down fa-2x"></i>
+            <i class="fas fa-chevron-circle-down "></i>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <?php if ($auth['role'] == 'admin') :?>

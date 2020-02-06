@@ -5,9 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
 
 </head>
 
@@ -95,15 +95,15 @@
                             <h4 class="card-title">Customer checkpoint</h4>
                             <p class="card-category">Collect get & used customer points</p>
                         </div>
-                        <div class="card-body table-responsive">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="card-body table-responsive">
                             <table class="table table-hover">
                                 <thead class="text-warning">
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Get</th>
                                         <th>Used</th>
-                                        <th>Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -114,11 +114,40 @@
                                     <td><?= date("d-m-Y",strtotime($user->create_at)) ?></td>
                                     <td class="usepoint"><?= "-".$user->point ?></td>
                                 </tr>
-<?php endforeach; ?>
+                                <?php endforeach; ?>
                                     
                                 </tbody>
                             </table>
-                        </div>
+                            </div>
+                                </div>
+                                <div class="row">
+                            <div class="col-md-6 col-md-6">
+                                <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Used</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach($userPoint as $user):?>
+                                    
+                                <tr>
+                                    <td><?= $count ?></td>
+                                    <td><?= date("d-m-Y",strtotime($user->create_at)) ?></td>
+                                    <td class="usepoint"><?= "-".$user->point ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                                    
+                                </tbody>
+                            </table>
+                            </div>
+                                </div>
+                        
+                        
+                        
                     </div>
                 </div>
             </div>
