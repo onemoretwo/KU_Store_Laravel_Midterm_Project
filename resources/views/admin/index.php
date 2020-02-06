@@ -57,7 +57,7 @@
                                         <td><?= $product->name?></td>
                                         <td><?= $product->description?></td>
                                         <td><?= $product->price?></td>
-                                        <td><a class="btn btn-default btn-sm" href="/admin/delete_items/<?= $product->id ?>" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                        <td><a class="btn btn-default btn-sm" href="/admin/delete_items/<?= $product->id ?>" role="button"><span class="fa fa-trash"></span></a>
 
                                         </td>
                                         
@@ -66,57 +66,7 @@
 <?php endforeach; ?>
 
 
-                                        <!-- <tr>
-                                            <td>Shirt</td>
-                                            <td>Picture</td>
-                                            <td>original</td>
-                                            <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacinia ex
-                                                at luctus varius. Nulla pulvinar tortor eu mi convallis, eget egestas
-                                                dolor fringilla. Pellentesque ut gravida diam. Nunc laoreet elementum
-                                                diam id commodo. Pellentesque commodo lacus et consequat mattis.
-                                                Vestibulum ac orci porta, placerat orci ut, rutrum lectus. Nunc
-                                                imperdiet ultricies tellus, eleifend sagittis diam cursus sit amet.
-                                                Fusce ac placerat odio, eu scelerisque nisl. Morbi sagittis vel nisl
-                                                gravida tempus. Nunc et dui urna. Donec dapibus, erat sed sodales
-                                                mollis, ante dolor ultricies ligula, sed interdum velit purus a elit.
-                                                Vivamus augue neque, ultrices eget mi vestibulum, hendrerit ultricies
-                                                velit. Sed mollis libero eget ligula pulvinar, at faucibus dolor
-                                                egestas.</td>
-                                            <td>250 </td>
-                                            <td><button type="button" class="btn btn-default btn-sm">
-                                                    <span class="glyphicon glyphicon-trash"></span>
-                                                </button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shirt</td>
-                                            <td>Picture</td>
-                                            <td>original</td>
-                                            <td> ......</td>
-                                            <td>250 </td>
-                                            <td><button type="button" class="btn btn-default btn-sm">
-                                                    <span class="glyphicon glyphicon-trash"></span>
-                                                </button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shirt</td>
-                                            <td>Picture</td>
-                                            <td>original</td>
-                                            <td> ......</td>
-                                            <td>250 </td>
-                                            <td><button type="button" class="btn btn-default btn-sm">
-                                                    <span class="glyphicon glyphicon-trash"></span>
-                                                </button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shirt</td>
-                                            <td>Picture</td>
-                                            <td>original</td>
-                                            <td> ......</td>
-                                            <td>250 </td>
-                                            <td><button type="button" class="btn btn-default btn-sm">
-                                                    <span class="glyphicon glyphicon-trash"></span>
-                                                </button></td>
-                                        </tr> -->
+                                     
                                     </tbody>
                                 </table>
                             </div>

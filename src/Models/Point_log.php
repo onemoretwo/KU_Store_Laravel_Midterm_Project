@@ -32,4 +32,11 @@ class Point_log extends Model{
         ]);
         return $data;
     }
+    public function point($id){
+        $sql = "select * from point_log";
+        $data = $this ->db->queryAll($sql,[
+            ':id' => $id
+        ]);
+
+    }
 }

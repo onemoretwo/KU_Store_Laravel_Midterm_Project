@@ -107,12 +107,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Arnon</td>
-                                        <td>1,234</td>
-                                        <td> 25</td>
-                                    </tr>
+                                <?php foreach($userPoint as $user):?>
+                                    
+                                <tr>
+                                    <td><?= $count ?></td>
+                                    <td><?= date("d-m-Y",strtotime($user->create_at)) ?></td>
+                                    <td class="usepoint"><?= "-".$user->point ?></td>
+                                </tr>
+<?php endforeach; ?>
                                     
                                 </tbody>
                             </table>

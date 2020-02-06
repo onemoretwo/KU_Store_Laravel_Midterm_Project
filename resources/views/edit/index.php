@@ -77,8 +77,8 @@
                 foreach ($usersuse as $user) : 
                 ++$count?>
                   <tr>
-                    <td><?= $count ?></td>
-                    <td><?= date("d-m-Y",strtotime($user->create_at)) ?></td>
+                    <td><?= $user_id ?></td>
+                    <td class="point"><?= $user->point ?></td>
                     <td class="usepoint"><?= "-".$user->point ?></td>
                   </tr>
                 <?php endforeach; ?>
