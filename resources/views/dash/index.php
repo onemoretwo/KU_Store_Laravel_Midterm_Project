@@ -15,10 +15,10 @@
     <br>
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" href="/dash/index">DashBoard</a>
+            <a class="nav-link active" href="/dash">DashBoard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin/index">Products</a>
+            <a class="nav-link" href="/admin">Products</a>
         </li>
 
     </ul>
@@ -28,15 +28,15 @@
         <br>
         <div class="container" style="align-items: center;">
 
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="align-items: center;">
                     <div class="card card-stats">
                         <div class="card-header card-header-warning card-header-icon">
                             <div class="card-icon">
-                                <i class="material-icons">people_alt</i>
+                                <i class="material-icons">Users</i>
                             </div>
                             <p class="card-category">Users</p>
-                            <h3 class="card-title">1,234 people
+                            <h3 class="card-title"><?= $totalUsers ?>
 
                             </h3>
                         </div>
@@ -51,10 +51,10 @@
                     <div class="card card-stats">
                         <div class="card-header card-header-success card-header-icon">
                             <div class="card-icon">
-                                <i class="material-icons">money</i>
+                                <i class="material-icons">Used points</i>
                             </div>
-                            <p class="card-category">Income</p>
-                            <h3 class="card-title">34,567฿</h3>
+                            <p class="card-category">points</p>
+                            <h3 class="card-title"><?= $totalPointUse ?></h3>
                         </div>
                         <div class="card-footer">
                             <div class="stats">
@@ -65,7 +65,7 @@
                 </div>
 
 
-            </div> -->
+            </div>
 
             <div class="container" style="margin-top: 20px;">
                 <ul class="nav nav-tabs" role="tablist">
@@ -80,53 +80,64 @@
                     </li>
                 </ul>
                 <div class="tab-content">
+
+
+                <!-- -------------------------------------------------------------------------------------------- -->
                     <div id="home" class="container tab-pane active"><br>
-                    <form action="/action_page.php">
+                    <form action="/dash" method="post">
                         Choose Date:
                         <input type="date" name="bday">
                         <input type="submit">
                     </form>
-                    <h3>Customers List</h3>
-            <div class="row" align="center">
+                    <div class="row" align="center">
 
-                <div class="col-lg-12 col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title">Customer checkpoint</h4>
-                            <p class="card-category">Collect get & used customer points</p>
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-hover">
-                                <thead class="text-warning">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Get</th>
-                                        <th>Used</th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach($userPoint as $user):?>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title">Customer check</h4>
+                                    <p class="card-category">All user and point</p>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-warning">
+                                            <tr>
+                                                <th></th>
+                                                <th>Username</th>
+                                                <th>point get</th>
+                                            </tr>
+                                        </thead>
+                                    <tbody>
+                                        <?php 
+                                        $count = 0;
+                                        foreach($allget as $user):
+                                        ++$count; ?>
+                                            
+                                        <tr>
+                                            <td><?= $count ?></td>
+                                            <td><?= $user->username ?></td>
+                                            <td class="usepoint"><?= $user->totalget ?></td>
+                                        </tr>
+                                        
+                                        <?php endforeach; ?>
                                     
-                                <tr>
-                                    <td><?= $count ?></td>
-                                    <td><?= date("d-m-Y",strtotime($user->create_at)) ?></td>
-                                    <td class="usepoint"><?= "-".$user->point ?></td>
-                                </tr>
-<?php endforeach; ?>
-                                    
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <form action="dash/exportTiime/<?= $date; ?>" method="post">
+                        <button type="submit" name="submit_button" class="btn btn-primary">Export Excel</button>
+                    </form>
 
-                        <h3>HOME</h3>
+                        <h3 style="margin-top: 30px">HOME</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.</p>
                     </div>
+
+
+
+                    <!-- --------------------------------------------------------------------- -->
                     <div id="menu1" class="container tab-pane fade"><br>
                     <form action="/action_page.php">
                         Choose Date:

@@ -57,7 +57,7 @@
                                         <td><?= $product->name?></td>
                                         <td><?= $product->description?></td>
                                         <td><?= $product->price?></td>
-                                        <td><a class="btn btn-default btn-sm" href="/admin/delete_items/<?= $product->id ?>" role="button"><span class="fa fa-trash"></span></a>
+                                        <td><a class="btn btn-default btn-sm" href="/admin/delete_items/<?= $product->id ?>" role="button"><i class="fa fa-trash"></i></a>
 
                                         </td>
                                         

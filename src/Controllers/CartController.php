@@ -18,9 +18,9 @@ class CartController extends Controller {
     }
 
     public function delete_cart_item(){
-        // if(!isset($this->request->params[0])){
-        //     throw new Exception("Param[0] is required");
-        // }
+        if(!isset($this->request->params[0])){
+            throw new Exception("Param[0] is required");
+        }
         $itemid = $this->request->params[0];
         $result = (new Cart_item())->del_mycart($itemid);
         return $this->redirect('cart');

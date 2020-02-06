@@ -87,4 +87,22 @@ class User extends Model{
         ]);
         return $data;
     }
+
+    public function all_get_log(){
+        $sql = "SELECT users.username,SUM(point_log.`point`) AS totalget"
+                . " FROM users JOIN point_log ON `users`.`id` = point_log.user_id"
+                . " WHERE role = 'user' AND ref_type = 'get'"
+                . " GROUP BY users.id";
+        $data = $this->db->queryAll($sql);
+        return $data;
+    }
+
+    public function all_use_log(){
+        $sql = "SELECT users.id,SUM(point_log.`point`) AS totaluse"
+                . " FROM users JOIN point_log ON `users`.`id` = point_log.user_id"
+                . " WHERE role = 'user' AND ref_type = 'use'"
+                . " GROUP BY users.id";
+        $data = $this->db->queryAll($sql);
+        return $data;
+    }
 }

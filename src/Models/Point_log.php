@@ -32,11 +32,20 @@ class Point_log extends Model{
         ]);
         return $data;
     }
-    public function point($id){
-        $sql = "select * from point_log";
-        $data = $this ->db->queryAll($sql,[
-            ':id' => $id
-        ]);
 
+    public function getAllPointUse(){
+        $sql = "select SUM(`point`) as total from point_log where ref_type = 'use'";
+        $data = $this->db->queryFirst($sql);
+        return $data;
+    }
+
+    public function search_date($date){
+        $sql = "SELECT username, SUM(point_log.`point`) as totalget FROM point_log JOIN users ON point_log.user_id = users.id"
+        . " WHERE point_log.create_at LIKE :date"
+        . " GROUP BY username";
+        $data = $this->db->queryAll($sql, [
+            ':date' => $date."%"
+        ]);
+        return $data;
     }
 }

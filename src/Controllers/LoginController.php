@@ -46,7 +46,6 @@ class LoginController extends Controller {
 
         if(empty($username) && empty($email) && empty($npwd) && empty($rpwd)){
             echo "<script>alert('All fields are required.')</script>";
-            
         }
 
         if(!empty($username)){

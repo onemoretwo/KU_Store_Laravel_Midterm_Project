@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\Item;
 use App\Framework\Utilities\Session; 
+use App\Models\Cart_item;
 
 use Exception;
 
@@ -36,14 +37,16 @@ class AdminController extends Controller {
         $price = $input->price;
         $desc = $input->desc;
         
-        $result = (new Item())->insert($name,$type,$price, $desc,$file_store);
+        $result = (new Item())->insert($name,$type,$price, $desc,"/".$file_store);
         return $this->redirect('admin');
     }
+
     public function delete_items(){
         if(!isset($this->request->params[0])){
             throw new Exception("Param[0] is required");
         }
         $itemid = $this->request->params[0];
+        $result2 = (new Cart_item())->clearcart_afterdel($itemid);
         $result = (new Item())->delete($itemid);
         return $this->redirect('admin');
         
