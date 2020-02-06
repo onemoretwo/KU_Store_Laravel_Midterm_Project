@@ -28,7 +28,7 @@
         <br>
         <div class="container" style="align-items: center;">
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="align-items: center;">
                     <div class="card card-stats">
                         <div class="card-header card-header-warning card-header-icon">
@@ -65,7 +65,7 @@
                 </div>
 
 
-            </div>
+            </div> -->
 
             <div class="container" style="margin-top: 20px;">
                 <ul class="nav nav-tabs" role="tablist">
@@ -82,45 +82,18 @@
                 <div class="tab-content">
                     <div id="home" class="container tab-pane active"><br>
                     <form action="/action_page.php">
-  Choose Date:
-  <input type="date" name="bday">
-  <input type="submit">
-</form>
-                        <h3>HOME</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div id="menu1" class="container tab-pane fade"><br>
-                    <form action="/action_page.php">
-  Choose Date:
-  <input type="date" name="bday">
-  <input type="submit">
-</form>
-                    
-                        <h3>Menu 1</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.</p>
-                    </div>
-                    <div id="menu2" class="container tab-pane fade"><br>
-                    <form action="/action_page.php">
-  Choose Date:
-  <input type="date" name="bday">
-  <input type="submit">
-</form>
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam.</p>
-                    </div>
-                </div>
-            </div>
-            <h3>Customers List</h3>
+                        Choose Date:
+                        <input type="date" name="bday">
+                        <input type="submit">
+                    </form>
+                    <h3>Customers List</h3>
             <div class="row" align="center">
 
                 <div class="col-lg-12 col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title">Customer list</h4>
-                            <p class="card-category">Collection of point & total prices per person</p>
+                            <h4 class="card-title">Customer checkpoint</h4>
+                            <p class="card-category">Collect get & used customer points</p>
                         </div>
                         <div class="card-body table-responsive">
                             <table class="table table-hover">
@@ -128,8 +101,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Get</th>
+                                        <th>Used</th>
                                         <th>Total</th>
-                                        <th>Point</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -139,24 +113,7 @@
                                         <td>1,234</td>
                                         <td> 25</td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Phitchayatida</td>
-                                        <td>895</td>
-                                        <td>16</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Sage Rodriguez</td>
-                                        <td>76 </td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Philip Chaney</td>
-                                        <td>16</td>
-                                        <td>2</td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -164,6 +121,104 @@
                 </div>
             </div>
 
+                        <h3>HOME</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div id="menu1" class="container tab-pane fade"><br>
+                    <form action="/action_page.php">
+                        Choose Date:
+                        <input type="date" name="bday">
+                        <input type="submit">
+                    </form>
+                    <h3>Customers List</h3>
+            <div class="row" align="center">
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Customer checkpoint</h4>
+                            <p class="card-category">Collect get & used customer points</p>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Get</th>
+                                        <th>Used</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Arnon</td>
+                                        <td>1,234</td>
+                                        <td> 25</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    
+                        <h3>Menu 1</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                    </div>
+                    <div id="menu2" class="container tab-pane fade"><br>
+                    <form action="/action_page.php">
+                        Choose Date:
+                        <input type="date" name="bday">
+                        <input type="submit">
+                    </form>
+                    <h3>Customers List</h3>
+            <div class="row" align="center">
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Customer checkpoint</h4>
+                            <p class="card-category">Collect get & used customer points</p>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Get</th>
+                                        <th>Used</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Arnon</td>
+                                        <td>1,234</td>
+                                        <td> 25</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <h3>Menu 2</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.</p>
+                    </div>
+                </div>
+            </div>
+            
 
         </div>
 

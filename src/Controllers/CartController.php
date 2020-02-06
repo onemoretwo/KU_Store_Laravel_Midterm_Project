@@ -31,7 +31,8 @@ class CartController extends Controller {
         }
         $totalpaid = $this->request->params[0];
         if($totalpaid == 0){
-            return "No Item in cart";
+            echo "<script>alert('No Item in cart')</script>";
+            
         }
         $input = $this->request->input;
         $coupon_code = $input->code;
@@ -41,7 +42,8 @@ class CartController extends Controller {
         $coupon = (new Coupon())->findCoupon($userid,$coupon_code);
         if($coupon_code != "" ){
             if(!$coupon){
-                return "Your coupon code is incorrect";
+                echo "<script>alert('Your coupon code is incorrect')</script>";
+                
             }else{
                 if($coupon->type == 'normal'){
                     $totalpaid -= 500;

@@ -33,7 +33,8 @@ class RewardController extends Controller {
         $newPoint = $user->point - $use_point;
         $usePointResult = (new Point_log())->create_log($userid,'use',$use_point);
         if($newPoint < 0){
-            return "Your point not enough";
+            echo "<script>alert('Your point not enough')</script>";
+            
         }
         $result1 = (new User())->addPoint($userid,$newPoint);
         return $this->redirect('reward');

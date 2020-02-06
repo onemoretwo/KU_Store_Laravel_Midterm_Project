@@ -11,9 +11,11 @@ class AdminController extends Controller {
         $auth = Session::read('Auth');
 
         if (!$auth or $auth['role'] != 'Admin') {
-            return 'You have no permission';
+            echo "<script>alert(You have no permission')</script>";
+            
         }
         $products = (new Item())->productList();
+        
         return $this->render('admin/index', ["products" => $products]);
     }
  
