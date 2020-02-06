@@ -57,13 +57,22 @@
                                         <td><?= $product->name?></td>
                                         <td><?= $product->description?></td>
                                         <td><?= $product->price?></td>
+<<<<<<< HEAD
                                         <td><a class="btn btn-default btn-sm" href="/admin/delete_items/<?= $product->id ?>" role="button"><i class="fa fa-trash"></i></a>
+=======
+                                        <td>
+
+                                        <!-- <button class="btn"><i class="fa fa-trash"></i> Trash</button> -->
+                                        <a href="/admin/delete_items/<?= $product->id ?>"><span class="fa fa-trash fa-1x"></span></a>
+                                        <!-- </a> -->
+                                        <!-- <a class="btn btn-default btn-sm" href="/admin/delete_items/<?= $product->id ?>" role="button"><i class="fa fa-trash"></i></a> -->
+>>>>>>> a3bddb927110b8513ec16feeea93b45308b47dca
 
                                         </td>
                                         
                                     </tr>
                                     
-<?php endforeach; ?>
+                                    <?php endforeach; ?>
 
 
                                      
