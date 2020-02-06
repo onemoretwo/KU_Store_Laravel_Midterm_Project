@@ -68,7 +68,7 @@ $current_user = (new User())->find_user($auth['username'])[0];
                     <li>Use 750 points.</li>
                     
                 </ul>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalpremium">
+                <button type="button" class="btn btn-primary btn-redeem" data-toggle="modal" data-target="#exampleModalpremium">
   Redeem now
 </button>
 
@@ -104,7 +104,7 @@ $current_user = (new User())->find_user($auth['username'])[0];
                     <li>Use 250 points</li>
                     
                 </ul>
-                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalnormal">Redeem now</button>
+                <button type="submit" class="btn btn-primary btn-redeem" data-toggle="modal" data-target="#exampleModalnormal">Redeem now</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalnormal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

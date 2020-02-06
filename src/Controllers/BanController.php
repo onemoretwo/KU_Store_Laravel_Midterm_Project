@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use App\Models\User;
 
+use Exception;
+
 class BanController extends Controller {
     public function index() {
         $users = (new User())->getAllUser();

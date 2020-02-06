@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Point_log;
 use App\Models\Coupon;
 
+use Exception;
+
 class CartController extends Controller {
     public function index() {
         $auth = Session::read('Auth');
@@ -24,9 +26,9 @@ class CartController extends Controller {
     }
 
     public function submit_paid(){
-        // if(!isset($this->request->params[0])){
-        //     throw new Exception("Param[0] is required");
-        // }
+        if(!isset($this->request->params[0])){
+            throw new Exception("Param[0] is required");
+        }
         $totalpaid = $this->request->params[0];
         if($totalpaid == 0){
             return "No Item in cart";

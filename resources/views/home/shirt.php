@@ -1,5 +1,5 @@
 <?php $this->layout('layouts/app');?>
-<link rel="stylesheet" href="<?=$this->asset('/css/agency.min.css')?>">
+
 
 <head>
 
@@ -19,7 +19,6 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
         type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import "/css/navbar-style.css";
+
 .card {
     font-size: .875rem;
 }

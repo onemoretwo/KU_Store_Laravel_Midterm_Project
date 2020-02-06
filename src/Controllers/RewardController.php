@@ -6,6 +6,8 @@ use App\Framework\Utilities\Session;
 use App\Models\Coupon;
 use App\Models\Point_log;
 
+use Exception;
+
 class RewardController extends Controller {
     public function index()
     {

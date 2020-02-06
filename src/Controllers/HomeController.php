@@ -5,7 +5,7 @@ use App\Framework\Utilities\Session;
 use App\Models\Cart_item;
 use App\Models\Item;
 
-
+use Exception;
 
 class HomeController extends Controller {
     public function index() {
@@ -16,9 +16,9 @@ class HomeController extends Controller {
     }
 
     public function add(){
-        // if(!isset($this->request->params[0])){
-        //     throw new Exception("Param[0] is required");
-        // }
+        if(!isset($this->request->params[0])){
+            throw new Exception("Param[0] is required");
+        }
         $auth = Session::read('Auth');
         $itemid = $this->request->params[0];
         $data = (new Cart_item())->add($auth['id'],$itemid);
