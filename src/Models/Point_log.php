@@ -39,4 +39,5 @@ class Point_log extends Model{
         ]);
 
     }
+    
 }

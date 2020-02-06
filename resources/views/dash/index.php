@@ -121,61 +121,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 col-md-12">
-                                <div class="card-body table-responsive">
-                                <table class="table table-hover">
-                                <thead class="text-warning">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Used</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach($userPoint as $user):?>
-                                    
-                                    <tr>
-                                        <td><?= $count ?></td>
-                                        <td><?= date("d-m-Y",strtotime($user->create_at)) ?></td>
-                                        <td class="usepoint"><?= "-".$user->point ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                                    
-                            </tbody>
-                            </table>
-                            </div>
-                        </div>
-                    </div>
-                            
+                    
                         
                         
-                        <!-- <div class="row">
-                            <div class="col-md-6 col-md-6">
-                                <div class="card-body table-responsive">
-                                <table class="table table-hover">
-                                <thead class="text-warning">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Used</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach($userPoint as $user):?>
-                                    
-                                <tr>
-                                    <td><?= $count ?></td>
-                                    <td><?= date("d-m-Y",strtotime($user->create_at)) ?></td>
-                                    <td class="usepoint"><?= "-".$user->point ?></td>
-                                </tr>
-                                <?php endforeach; ?>
-                                    
-                            </tbody>
-                            </table>
-                            </div> -->
-                        </div>
-                    </div>
+                        
                                 
                         
                    
