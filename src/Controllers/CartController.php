@@ -13,7 +13,8 @@ class CartController extends Controller {
     public function index() {
         $auth = Session::read('Auth');
         $carts = (new Cart_item())->get_mycart($auth['id']);
-        return $this->render('cart/index', ['carts' => $carts]);
+        $coupons = (new Coupon())->getAllCoupon($auth['id']);
+        return $this->render('cart/index', ['carts' => $carts,'coupons' => $coupons]);
     }
 
     public function delete_cart_item(){
@@ -44,17 +45,15 @@ class CartController extends Controller {
             if(!$coupon){
                 echo "<script>alert('Your coupon code is incorrect')</script>";
                 
+            if($coupon->type == 'normal'){
+                $totalpaid -= 500;
             }else{
-                if($coupon->type == 'normal'){
-                    $totalpaid -= 500;
-                }else{
-                    $totalpaid *= 0.8;
-                }
-                if($totalpaid < 0){
-                    $totalpaid = 0;
-                }
-                $result = (new Coupon())->useCoupon($coupon->id);
+                $totalpaid *= 0.8;
             }
+            if($totalpaid < 0){
+                $totalpaid = 0;
+            }
+            $result = (new Coupon())->useCoupon($coupon->id);
         }
         $point = $totalpaid/20;
         $totalpoint = $user->point + $point;

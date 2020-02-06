@@ -2,20 +2,19 @@
 
 namespace App\Controllers;
 use App\Models\User;
+use App\Framework\Utilities\Session;
 
 use Exception;
 
 class BanController extends Controller {
     public function index() {
-        if (!$this->request->input) {
-            $input = $this->request->input;
-            $keyword = $input->keyword;
-            $users = (new User())->search($keyword);
-            return $this->render('ban/index',['users' => $users]);
-        } else {
-            $users = (new User())->getAllUser();
-            return $this->render('ban/index',['users' => $users]);
+        $auth = Session::read('Auth');
+
+        if (!$auth or $auth['role'] != 'admin') {
+            return 'You have no permission';
         }
+        $users = (new User())->getAllUser();
+        return $this->render('ban/index',['users' => $users]);
     }
     
     public function changeStatus(){
@@ -27,5 +26,10 @@ class BanController extends Controller {
         return $this->redirect('ban');
     }
 
-
+    public function search(){
+        $input = $this->request->input;
+        $keyword = $input->keyword;
+        $users = (new User())->search($keyword);
+        return $this->redirect('/ban', ['users' => $users]);
+    }
 }
