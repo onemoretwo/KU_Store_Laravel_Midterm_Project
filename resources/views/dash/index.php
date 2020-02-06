@@ -28,7 +28,7 @@
         <br>
         <div class="container" style="align-items: center;">
 
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="align-items: center;">
                     <div class="card card-stats">
                         <div class="card-header card-header-warning card-header-icon">
@@ -65,7 +65,7 @@
                 </div>
 
 
-            </div> -->
+            </div>
 
             <div class="container" style="margin-top: 20px;">
                 <ul class="nav nav-tabs" role="tablist">

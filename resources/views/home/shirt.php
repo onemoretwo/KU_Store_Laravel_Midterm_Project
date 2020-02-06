@@ -73,8 +73,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single_service ">
                             <div class="service_icon_wrap text-center">
-                                <form action="../pant">
-                                    <input type="image" src="<?=$this->asset('/images/jeans.png')?>" href="/resources/views/pant" style="width: 90px;height: 90px;padding-top: 20px;"onsubmit="submit();" />
+                               
+                                    <input type="image" src="<?=$this->asset('/images/jeans.png')?>" href="/resources/views/pant" style="width: 90px;height: 90px;padding-top: 20px;"onsubmit="submit();"  />
                                   </form>
                             </div>
                             <div class="info text-center">
@@ -91,8 +91,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single_service ">
                             <div class="service_icon_wrap text-center">
-                                <form action="../accessories">
-                                    <input type="image" src="<?=$this->asset('/images/footprint.png')?>" href="/resources/views/accessories" style="width: 90px;height: 90px;padding-top: 20px;"onsubmit="submit();" />
+                                <form action="">
+                                    <input type="image" src="<?=$this->asset('/images/footprint.png')?>" style="width: 90px;height: 90px;padding-top: 20px;"onsubmit="submit();" disable/>
                                   </form>
                             </div>
                             <div class="info text-center">

@@ -154,3 +154,8 @@ body{
     background-color: rgb(255, 123, 123);
     border-color: rgb(255, 123, 123);
 }
+.user{
+    color: aliceblue;
+    font-size: larger;
+    margin-right: 20px;
+}
