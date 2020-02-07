@@ -34,7 +34,7 @@ class Point_log extends Model{
     }
 
     public function getAllPointUse(){
-        $sql = "select SUM(`point`) as total from point_log where ref_type = 'use'";
+        $sql = "select SUM(`point`) as total from point_log where ref_type = 'get'";
         $data = $this->db->queryFirst($sql);
         return $data;
     }

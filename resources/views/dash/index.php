@@ -73,10 +73,10 @@
                         <a class="nav-link active" data-toggle="tab" href="#home">Daily</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu1">Weekly</a>
+                        <a class="nav-link" data-toggle="tab" href="#home">Weekly</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu2">Monthly</a>
+                        <a class="nav-link" data-toggle="tab" href="#home">Monthly</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -126,13 +126,11 @@
                             </div>
                         </div>
                     </div>
-                    <form action="dash/exportTiime/<?= $date; ?>" method="post">
+                    <form action="dash/export" method="post">
                         <button type="submit" name="submit_button" class="btn btn-primary">Export Excel</button>
                     </form>
 
-                        <h3 style="margin-top: 30px">HOME</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.</p>
+                       
                     </div>
 
 
@@ -180,9 +178,7 @@
             </div>
 
                     
-                        <h3>Menu 1</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.</p>
+                     
                     </div>
                     <div id="menu2" class="container tab-pane fade"><br>
                     <form action="/action_page.php">
@@ -225,9 +221,6 @@
                 </div>
             </div>
 
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam.</p>
                     </div>
                 </div>
             </div>

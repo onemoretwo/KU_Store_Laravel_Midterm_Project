@@ -42,9 +42,6 @@ class CartController extends Controller {
         $userid = $auth['id'];
         $coupon = (new Coupon())->findCoupon($userid,$coupon_code);
         if($coupon_code != "" ){
-            if(!$coupon){
-                echo "<script>alert('Your coupon code is incorrect')</script>";
-                
             if($coupon->type == 'normal'){
                 $totalpaid -= 500;
             }else{
@@ -62,5 +59,4 @@ class CartController extends Controller {
         $createlog = (new Point_log())->create_log($userid,'get',$point);
         return $this->redirect('cart');
     }
-}
 }
