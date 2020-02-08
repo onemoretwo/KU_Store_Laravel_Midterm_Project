@@ -25,11 +25,4 @@ class BanController extends Controller {
         $result = (new User())->toggleStatus($userid);
         return $this->redirect('ban');
     }
-
-    public function search(){
-        $input = $this->request->input;
-        $keyword = $input->keyword;
-        $users = (new User())->search($keyword);
-        return $this->redirect('/ban', ['users' => $users]);
-    }
 }

@@ -59,6 +59,7 @@ class EditController extends Controller {
                 echo "<script>alert('Please enter your current password.')</script>";
                 
             }
+            echo "<script>window.location.href = '/edit'</script>";
         }else{
             $result = (new User())->update($newEmail,$old,$image_path,$auth['id']);
             return $this->redirect('/edit');

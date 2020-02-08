@@ -37,4 +37,12 @@ class Cart_item extends Model{
         ]);
         return $data;
     }
+
+    public function clearcart_afterdel($itemid){
+        $sql = "delete from cart_items where item_id = :itemid";
+        $data = $this->db->queryAll($sql, [
+            ':itemid' => $itemid
+        ]);
+        return $data;
+    }
 }

@@ -18,9 +18,9 @@ class CartController extends Controller {
     }
 
     public function delete_cart_item(){
-        // if(!isset($this->request->params[0])){
-        //     throw new Exception("Param[0] is required");
-        // }
+        if(!isset($this->request->params[0])){
+            throw new Exception("Param[0] is required");
+        }
         $itemid = $this->request->params[0];
         $result = (new Cart_item())->del_mycart($itemid);
         return $this->redirect('cart');
@@ -42,9 +42,6 @@ class CartController extends Controller {
         $userid = $auth['id'];
         $coupon = (new Coupon())->findCoupon($userid,$coupon_code);
         if($coupon_code != "" ){
-            if(!$coupon){
-                echo "<script>alert('Your coupon code is incorrect')</script>";
-                
             if($coupon->type == 'normal'){
                 $totalpaid -= 500;
             }else{
@@ -62,5 +59,4 @@ class CartController extends Controller {
         $createlog = (new Point_log())->create_log($userid,'get',$point);
         return $this->redirect('cart');
     }
-}
 }

@@ -37,11 +37,12 @@ class Item extends Model{
         ]);
         return $data;
     }
+    
     public function delete($itemid){
         $sql ="DELETE FROM items WHERE id = :id";
         $data = $this->db->queryAll($sql,[
             ':id' => $itemid
         ]);
-        return data;
+        return $data;
     }
 }

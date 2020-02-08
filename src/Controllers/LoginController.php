@@ -13,11 +13,10 @@ class LoginController extends Controller {
         $username = $input->username;
         $user = (new User())->find_user($username)[0];
         $password = $input->password;
-        if($user->status == "ban"){
-            return "Your account has been banned";
-        }
         if ($user){
-            if(password_verify($password,$user->password)){
+            if ($user->status == "ban"){
+                echo "<script>alert('Your account has been banned')</script>";
+            }else if(password_verify($password,$user->password)){
                 Session::write('Auth', [
                     'id' => $user->id,
                     'username' => $user->username,
@@ -27,11 +26,8 @@ class LoginController extends Controller {
             }else{
                echo "<script>alert('Sorry, Your password is incorrect.')</script>";
             }
-        }else if($user!= $username){
-            echo "<script>alert('Sorry, Your username is incorrect.')</script>";
-            
         }else{
-            echo "<script>alert('Please fill all inputs')</script>";
+            echo "<script>alert('Sorry, Your username is incorrect.')</script>";
         }
         echo "<script>window.location.href = '/login'</script>";
 
@@ -46,7 +42,6 @@ class LoginController extends Controller {
 
         if(empty($username) && empty($email) && empty($npwd) && empty($rpwd)){
             echo "<script>alert('All fields are required.')</script>";
-            
         }
 
         if(!empty($username)){
