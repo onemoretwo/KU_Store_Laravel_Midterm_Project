@@ -69,8 +69,8 @@ $current_user = (new User())->find_user($auth['username'])[0];
                     
                 </ul>
                 <button type="button" class="btn btn-primary btn-redeem" data-toggle="modal" data-target="#exampleModalpremium">
-  Redeem now
-</button>
+                  Redeem now
+                </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalpremium" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -92,8 +92,8 @@ $current_user = (new User())->find_user($auth['username'])[0];
     </div>
   </div>
 </div>
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
         <div class="card card-pricing popular shadow text-center px-3 mb-4">
             <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Normal</span>
             <div class="bg-transparent card-header pt-4 border-0">
