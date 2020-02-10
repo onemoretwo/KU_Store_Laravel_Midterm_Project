@@ -9,15 +9,7 @@
 
 <body>
     <br>
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="/dash/index">DashBoard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/index">Products</a>
-        </li>
-
-    </ul>
+    
     <h2 style="text-align: center;">Item Management</h2>
     <div class="container" style="margin-top: 20px; color:dimgrey">
         <ul class="nav nav-tabs" role="tablist">

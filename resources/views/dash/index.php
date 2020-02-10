@@ -13,15 +13,7 @@
 
 <body>
     <br>
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="/dash">DashBoard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/admin">Products</a>
-        </li>
-
-    </ul>
+    
 
     <div class="container">
         <h2>Analytics</h2>
@@ -41,9 +33,9 @@
                             </h3>
                         </div>
                         <div class="card-footer">
-                            <div class="stats">
+                            <!-- <div class="stats">
                                 <i class="material-icons">date_range</i> Last 24 Hours
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -57,9 +49,9 @@
                             <h3 class="card-title"><?= $totalPointUse ?></h3>
                         </div>
                         <div class="card-footer">
-                            <div class="stats">
+                            <!-- <div class="stats">
                                 <i class="material-icons">date_range</i> Last 24 Hours
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
