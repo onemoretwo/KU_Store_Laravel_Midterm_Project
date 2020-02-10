@@ -27,8 +27,8 @@ class User extends Model{
     }
 
     public function create_user($username,$email,$password){
-        $sql = "INSERT INTO users (`username`, `password`, `email`, `image_path`, `role`, `point`, `create_at`)"
-                . " VALUES (:username, :password, :email, '/images/user_img/profiletest1.png', 'user', '0', NOW())";
+        $sql = "INSERT INTO users (`username`, `password`, `email`, `image_path`, `role`, `point`,`status`, `create_at`)"
+                . " VALUES (:username, :password, :email, '/images/user_img/profiletest1.png', 'user', '0', 'active', NOW())";
         $data = $this->db->queryAll($sql,[
             ':username' => $username,
             ':password' => $password,
@@ -92,7 +92,7 @@ class User extends Model{
         $sql = "SELECT users.username,SUM(point_log.`point`) AS totalget"
                 . " FROM users JOIN point_log ON `users`.`id` = point_log.user_id"
                 . " WHERE role = 'user' AND ref_type = 'get'"
-                . " GROUP BY users.id";
+                . " GROUP BY users.id ORDER BY totalget DESC";
         $data = $this->db->queryAll($sql);
         return $data;
     }

@@ -42,7 +42,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="stats">
-                                <i class="material-icons">date_range</i> Last 24 Hours
+                                <i class="material-icons"></i>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="stats">
-                                <i class="material-icons">date_range</i> Last 24 Hours
+                                <i class="material-icons"></i>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                             <div class="card">
                                 <div class="card-header card-header-primary">
                                     <h4 class="card-title">Customer check</h4>
-                                    <p class="card-category">All user and point</p>
+                                    <p class="card-category"><?= $date ?></p>
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table class="table table-hover">

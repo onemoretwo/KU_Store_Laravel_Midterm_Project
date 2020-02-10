@@ -9,14 +9,17 @@ class DashController extends Controller {
         $input = $this->request->input;
         if (isset($input->bday)) {
             $all_get = (new Point_log())->search_date($input->bday);
+            $date = $input->bday;
 
         } else {
             $all_get = (new User())->all_get_log();
+            $date = "All user point get";
         }
         $all_use = (new User())->all_use_log();
         $totalUsers = count((new User())->getAllUser());
         $totalPointUse = (new Point_log())->getAllPointUse();
         return $this->render('dash/index',[
+            'date' => $date,
             'allget' => $all_get,
             'totalUsers' => $totalUsers,
             'totalPointUse' => $totalPointUse->total

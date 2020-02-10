@@ -120,10 +120,12 @@
             </div>
             <div class="row">
 
-            <?php foreach ($products as $product) : ?>
+            <?php   $count = 1;
+                    foreach ($products as $product) : 
+                    $count++ ?>
 
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal<?= $count ?>">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-eye fa-3x" ></i>
@@ -152,8 +154,11 @@
 
 
 
-<?php foreach ($products as $product) :?>
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+<?php   $count = 1;
+        foreach ($products as $product) :
+        $count++;
+    ?>
+    <div class="portfolio-modal modal fade" id="portfolioModal<?= $count ?>" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">

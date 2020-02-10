@@ -31,32 +31,32 @@ class CartController extends Controller {
             throw new Exception("Param[0] is required");
         }
         $totalpaid = $this->request->params[0];
-        if($totalpaid == 0){
+        if($totalpaid == 1){
             echo "<script>alert('No Item in cart')</script>";
-            
-        }
-        $input = $this->request->input;
-        $coupon_code = $input->code;
-        $auth = Session::read('Auth');
-        $user = (new User())->find_user($auth['username'])[0];
-        $userid = $auth['id'];
-        $coupon = (new Coupon())->findCoupon($userid,$coupon_code);
-        if($coupon_code != "" ){
-            if($coupon->type == 'normal'){
-                $totalpaid -= 500;
-            }else{
-                $totalpaid *= 0.8;
+        }else{
+            $input = $this->request->input;
+            $coupon_code = $input->code;
+            $auth = Session::read('Auth');
+            $user = (new User())->find_user($auth['username'])[0];
+            $userid = $auth['id'];
+            $coupon = (new Coupon())->findCoupon($userid,$coupon_code);
+            if($coupon_code != "" ){
+                if($coupon->type == 'normal'){
+                    $totalpaid -= 500;
+                }else{
+                    $totalpaid *= 0.8;
+                }
+                if($totalpaid < 0){
+                    $totalpaid = 0;
+                }
+                $result = (new Coupon())->useCoupon($coupon->id);
             }
-            if($totalpaid < 0){
-                $totalpaid = 0;
-            }
-            $result = (new Coupon())->useCoupon($coupon->id);
+            $point = ($totalpaid-1)/20;
+            $totalpoint = $user->point + $point;
+            $clearCart = (new Cart_item())->clear_cart($userid);
+            $addPoint = (new User())->addPoint($userid,$totalpoint);
+            $createlog = (new Point_log())->create_log($userid,'get',$point);
         }
-        $point = $totalpaid/20;
-        $totalpoint = $user->point + $point;
-        $clearCart = (new Cart_item())->clear_cart($userid);
-        $addPoint = (new User())->addPoint($userid,$totalpoint);
-        $createlog = (new Point_log())->create_log($userid,'get',$point);
-        return $this->redirect('cart');
+        echo "<script>window.location.href = '/cart'</script>";
     }
 }
