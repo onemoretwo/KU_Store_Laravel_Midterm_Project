@@ -16,7 +16,7 @@
     
 
     <div class="container">
-        <h2>Analytics</h2>
+        <h2 align="center">Analytics</h2>
         <br>
         <div class="container" style="align-items: center;">
 

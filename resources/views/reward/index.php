@@ -41,7 +41,6 @@ $current_user = (new User())->find_user($auth['username'])[0];
 
             <tr>
               <td><span class="user"><img src="<?= $user->image_path ?>" alt=""></span></td>
-              <td><?= $user->username ?></td>
               <td><?= $user->point ?></td>
             </tr>
 
