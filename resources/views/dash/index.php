@@ -13,18 +13,10 @@
 
 <body>
     <br>
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="/dash">DashBoard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/admin">Products</a>
-        </li>
-
-    </ul>
+    
 
     <div class="container">
-        <h2>Analytics</h2>
+        <h2 align="center">Analytics</h2>
         <br>
         <div class="container" style="align-items: center;">
 

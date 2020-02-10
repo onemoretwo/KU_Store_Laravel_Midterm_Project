@@ -45,6 +45,8 @@
             <?php if ($auth['role'] == 'admin') :?>
               <a class="dropdown-item" href="/ban">Active/Ban</a>
               <a class="dropdown-item" href="/dash">Manage</a>
+              <a class="dropdown-item" href="/dash">Analytics</a>
+              <a class="dropdown-item" href="/admin">Products</a>
               <hr>
               <?php endif; ?>
             <a class="dropdown-item" href="/edit">Edit Profile</a>
