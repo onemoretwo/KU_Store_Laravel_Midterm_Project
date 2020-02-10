@@ -50,18 +50,15 @@ class LoginController extends Controller {
                     if($npwd == $rpwd){
                         $hash = password_hash($npwd,PASSWORD_DEFAULT);
                         $result = (new User())->create_user($username,$email,$hash);
-                        return $this->redirect('/login');
+                        echo "<script>alert('Signp success')</script>";
                     }else{
-                        echo "<script>alert('Password doesn't match')</script>";
-                        
+                        echo "<script>alert('Password does not match')</script>";
                     }
                 }else{
                     echo "<script>alert('Empty password')</script>";
-                    
                 }
             }else{
                 echo "<script>alert('Please fill your E-mail')</script>";
-               
             }
         }else{
             echo "<script>alert('Please fill your Username')</script>";

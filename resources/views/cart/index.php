@@ -4,6 +4,8 @@
   $auth = Session::read('Auth');
   $image_path = (new User())->find_user($auth['username'])[0]->image_path;
   $point = (new User())->find_user($auth['username'])[0]->point;
+  $total = 0;
+  $sendprice = 1;
 ?>
 
   <header>
@@ -33,9 +35,9 @@
               </thead>
               <tbody>
                 <?php 
-                $total = 0;
                 foreach ($carts as $item) :
-                $total += $item->price ?>
+                $total += $item->price;
+                $sendprice += $item->price ?>
 
                     <tr>
                       <td><img class="cart_img" src="<?= $item->image_path ?>" alt=""></td>
@@ -63,7 +65,7 @@
             </div>
             <div class="sec-pay">
 
-              <form action="/cart/submit_paid/<?= $total ?>" method="post">
+              <form action="/cart/submit_paid/<?= $sendprice ?>" method="post">
                 <h3 style="border-bottom:0.7px solid #dddee9;width: 120px;margin-left: -15px;">Payment</h3>
                 <div class="form-check-inline">
                   <label class="form-check-label">
