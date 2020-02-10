@@ -94,8 +94,28 @@
                       
                     </select>
                   </div>
-                <button type="submit" class="btn btn-outline-success">Confirm</button>
-
+                <button type="submit" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalnormal">Confirm</button>
+                <div class="modal fade" id="exampleModalnormal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-toggle="modal" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Are you sure to purchase your order?
+                      </div>
+                      <div class="modal-footer" >
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <form action="reward/getCoupon/normal">
+                          <button type="submit" class="btn btn-secondary">Confirm</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </form>
 
             </div>
