@@ -96,7 +96,7 @@
                       
                     </select>
                   </div>
-                <button type="submit" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalnormal">Confirm</button>
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalnormal">Confirm</button>
                 <div class="modal fade" id="exampleModalnormal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-toggle="modal" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -107,7 +107,13 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        Are you sure to purchase your order?
+                        Are you sure to purchase your order?<br><br>
+                        <?php foreach( $carts as $item ) :?>
+
+                          <p><?= $item->name ?>:   <?= $item->price ?>  Baht</p>
+
+                        <?php endforeach ?>
+                        <p>Total :   <?= $total ?> Baht</p>
                       </div>
                       <div class="modal-footer" >
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

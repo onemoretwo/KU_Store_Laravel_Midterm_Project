@@ -42,7 +42,7 @@ class Point_log extends Model{
     public function search_date($date){
         $sql = "SELECT username, SUM(point_log.`point`) as totalget FROM point_log JOIN users ON point_log.user_id = users.id"
         . " WHERE point_log.create_at LIKE :date"
-        . " GROUP BY username";
+        . " GROUP BY username ORDER BY totalget DESC";
         $data = $this->db->queryAll($sql, [
             ':date' => $date."%"
         ]);
