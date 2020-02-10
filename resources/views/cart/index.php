@@ -113,7 +113,16 @@
                           <p><?= $item->name ?>:   <?= $item->price ?>  Baht</p>
 
                         <?php endforeach ?>
-                        <p>Total :   <?= $total ?> Baht</p>
+                        <p>Total :   <?= $total ?> Baht</p><br><br>
+
+                        <p id="couponcode"></p>
+
+                        <script>
+
+                          var coupon = document.getElementById("exampleFormControlSelect1").value;
+                          document.getElementById("couponcode").innerHTML = coupon;
+                          
+                        </script>
                       </div>
                       <div class="modal-footer" >
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
