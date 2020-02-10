@@ -96,7 +96,7 @@
                       
                     </select>
                   </div>
-                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalnormal">Confirm</button>
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalnormal" onclick="couponShow()">Confirm</button>
                 <div class="modal fade" id="exampleModalnormal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-toggle="modal" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -113,16 +113,10 @@
                           <p><?= $item->name ?>:   <?= $item->price ?>  Baht</p>
 
                         <?php endforeach ?>
-                        <p>Total :   <?= $total ?> Baht</p><br><br>
+                        <p>Total :   <?= $total ?> Baht</p><br>
 
-                        <p id="couponcode"></p>
+                        your coupon code is<p id="couponcode"></p>
 
-                        <script>
-
-                          var coupon = document.getElementById("exampleFormControlSelect1").value;
-                          document.getElementById("couponcode").innerHTML = coupon;
-                          
-                        </script>
                       </div>
                       <div class="modal-footer" >
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -142,3 +136,11 @@
       </div>
     </div>
   </section>
+
+  <script>
+    function couponShow(){
+      var x = document.getElementById("exampleFormControlSelect1").value;
+      document.getElementById("couponcode").innerHTML = x;
+    }
+                          
+  </script>
